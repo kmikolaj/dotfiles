@@ -1,0 +1,428 @@
+# Tig custom configuration
+#
+# Please see 'man tigrc' for a complete reference.
+
+# Settings
+# --------
+# Most of these settings can be toggleable, either via the toggle-*
+# actions or via the option menu (bound to `o` by default).
+
+# View settings
+#
+# Supported column types and their options:
+#
+#   author
+#    - display (enum) [no|full|abbreviated|email|email-user]
+#					: Show author information?
+#    - width (int)			: Fixed width when nonzero
+#    - maxwidth (int)			: Autosize limit
+#
+#   commit-title
+#    - display (bool)			: Show the commit title?
+#    - graph (enum) [no|v2|v1]		: Show the commit graph? (main view only)
+#    - refs (bool)			: Show branches, tags and remotes? (main view only)
+#    - overflow (boolint)		: Highlight overflows? Defaults to 50 when enabled.
+#
+#   date
+#    - display (enum) [no|default|relative|relative-compact|custom]
+#					: Show dates?
+#    - local (bool)			: Show local dates?
+#    - format (string)			: Custom strftime(3) format
+#					  Note: %Z is formatted as %z
+#    - width (int)			: Fixed width when nonzero
+#
+#   file-name
+#    - display (enum) [no|always|auto]	: Show file names?
+#    - width (int)			: Fixed width when nonzero
+#    - maxwidth (int)			: Autosize limit
+#
+#   file-size
+#    - display (enum) [no|default|units]
+#					: Show file sizes?
+#    - width (int)			: Fixed width when nonzero
+#
+#   id
+#    - display (bool)			: Show commit/tree ID?
+#    - width (int)			: Fixed width when nonzero
+#
+#   line-number
+#    - display (bool)			: Show line numbers?
+#    - interval (int)			: Interval between line numbers; defaults to 5
+#    - width (int)			: Fixed width when nonzero
+#
+#   mode
+#    - display (bool)			: Show file modes?
+#    - width (int)			: Fixed width when nonzero
+#
+#   ref
+#    - display (bool)			: Show ref names?
+#    - width (int)			: Fixed width when nonzero
+#    - maxwidth (int)			: Autosize limit
+#
+#   status
+#    - display (enum) [no|short|long]	: Show status label?
+#
+#   text
+#    - display (bool)			: Show text?
+#    - commit-title-overflow (boolint)	: Highlight overflow in log and diff view?
+#
+
+set blame-view	= date:default author:full,width:32 file-name:auto id:yes,color line-number:yes,interval=5 text
+set grep-view	= file-name:no line-number:yes,interval=1 text
+set main-view	= date:default author:full,width:32 id:yes,color line-number:no,interval=5 commit-title:yes,graph,refs,overflow=no
+set reflog-view	= date:default line-number:no,interval=5 id:yes author:no commit-title:yes,refs,overflow=no
+set refs-view	= date:default author:full,width:32 id:yes,color line-number:no ref:yes commit-title:yes,graph,refs
+set stash-view	= date:default author:full,width:32 id:yes,color line-number:yes,interval=5 commit-title:yes,graph,refs
+set status-view	= file-name:yes line-number:yes,interval=5 status:long
+set tree-view	= date:default author:full,width:32 id:yes,color line-number:yes,interval=5 mode:yes file-name:auto file-size:units
+
+# Pager based views
+set pager-view	= line-number:yes,interval=5 text
+set stage-view	= line-number:yes,interval=5 text
+set log-view	= line-number:yes,interval=5 text
+set blob-view	= line-number:yes,interval=5 text
+set diff-view	= line-number:yes,interval=5 text:yes,commit-title-overflow=no
+
+# UI display settings
+set show-changes		= yes		# Show changes commits in the main view?
+set show-untracked		= yes		# Show also untracked changes?
+set wrap-lines			= no		# Wrap long lines in pager views?
+set tab-size			= 4		# Number of spaces to use when expanding tabs
+set line-graphics		= default	# Enum: ascii, default, utf-8, auto
+set truncation-delimiter	= ~		# Character drawn for truncations, or "utf-8"
+
+# Format reference names based on type.
+#  - head		: The current HEAD.
+#  - tag		: An annotated tag.
+#  - local-tag		: A lightweight tag.
+#  - remote		: A remote.
+#  - tracked-remote	: The remote tracked by current HEAD.
+#  - replace		: A replaced reference.
+#  - branch		: A branch.
+#  - stash		: The stash.
+#  - other		: Any other reference.
+# If no format is defined for `local-tag` then the one for `tag` is used.
+# Similarly, `remote` is used if no `tracked-remote` format exists.
+# Prefix with `hide:` to not show that reference type, e.g. `hide:remote`.
+# Expects a space-separated list of format strings.
+set reference-format		= [branch] <tag> {remote} ~replace~
+
+# Settings controlling how content is read from Git
+set commit-order		= topo		# Enum: auto, default, topo, date, reverse (main)
+set status-show-untracked-dirs	= yes		# Show files in untracked directories? (status)
+set status-show-untracked-files	= yes		# Show untracked files?
+set ignore-space		= no		# Enum: no, all, some, at-eol (diff)
+set show-notes			= yes		# When non-bool passed as `--show-notes=...` (diff)
+#set diff-context		= 3		# Number of lines to show around diff changes (diff)
+#set diff-options		= -C		# User-defined options for `tig show` (git-diff)
+#set diff-highlight		= true		# String (or bool): Path to diff-highlight script,
+						#                   defaults to `diff-highlight`.
+set word-diff			= no		# Show a word diff
+#set blame-options		= -C -C -C	# User-defined options for `tig blame` (git-blame)
+#set log-options		= --pretty=raw	# User-defined options for `tig log` (git-log)
+#set main-options		= -n 1000	# User-defined options for `tig` (git-log)
+set mailmap			= yes		# Use .mailmap to show canonical name and email address
+
+# Misc
+set start-on-head		= no		# Start with cursor on HEAD commit
+set refresh-mode		= auto		# Enum: manual, auto, after-command, periodic
+set refresh-interval		= 10		# Interval in seconds between refreshes
+set ignore-case			= smart-case	# Enum: no, yes, smart-case
+						# Ignore case when searching? Smart-case option will
+set wrap-search			= yes		# Wrap around to top/bottom of view when searching
+set focus-child			= yes		# Move focus to child view when opened?
+set send-child-enter		= yes		# Propagate "enter" keypresses to child views?
+set horizontal-scroll		= 33%		# Number of columns to scroll as % of width
+set split-view-height		= 67%		# Height of the bottom view for horizontal splits
+set vertical-split		= auto		# Enum: horizontal, vertical, auto; Use auto to
+						# switch to horizontal split when width allows it
+set split-view-width		= 50%		# Width of right-most view for vertical splits
+set editor-line-number		= yes		# Automatically pass line number to editor? Used
+						# for opening file at specific line e.g. from a diff
+set history-size		= 500		# Size of persistent history, 0 to disable
+set mouse			= no		# Enable mouse support?
+set mouse-scroll		= 3		# Number of lines to scroll via the mouse
+set mouse-wheel-cursor		= no		# Prefer moving the cursor to scrolling the view?
+set pgrp			= no		# Make tig process-group leader
+
+# User-defined commands
+# ---------------------
+# These commands allow to run shell commands directly from within Tig.
+# Unless otherwise specified, commands are run in the foreground with
+# their console output shown (as if '!' was specified). When multiple
+# command options are specified their behavior are combined, e.g. "?<git
+# commit" will prompt the user whether to execute the command and will
+# exit Tig after completion.
+#
+#   !	Run the command in the foreground with output shown.
+#   @	Run the command in the background with no output.
+#   ?	Prompt the user before executing the command.
+#   +	Run the command synchronously, and echo the first line of output to the status bar.
+#   <	Exit Tig after executing the command.
+#   >	Re-open Tig instantly in the last displayed view after executing the command.
+#
+# User-defined commands can optionally refer to Tig's internal state
+# using the following variable names, which are substituted before
+# commands are run:
+#
+#   %(head)		The current ref ID. Defaults to HEAD
+#   %(commit)		The current commit ID.
+#   %(blob)		The current blob ID.
+#   %(branch)		The current branch name.
+#   %(remote)		The current remote name.
+#   %(tag)		The current tag name.
+#   %(stash)		The current stash name.
+#   %(directory)	The current directory path in the tree view;
+#			empty for the root directory.
+#   %(file)		The currently selected file.
+#   %(ref)		The reference given to blame or HEAD if undefined.
+#   %(revargs)		The revision arguments passed on the command line.
+#   %(fileargs)		The file arguments passed on the command line.
+#   %(cmdlineargs)	All other options passed on the command line.
+#   %(diffargs)		The diff options from `diff-options` or `TIG_DIFF_OPTS`
+#   %(prompt)		Prompt for the argument value.
+
+
+
+# Normal commands
+# ---------------
+
+#bind generic g view-next
+bind generic b view-refs
+bind generic s view-status
+bind generic w view-stage
+bind generic F !git fetch
+bind generic y !@sh -c "echo -n %(commit) | xsel -ib"
+bind generic Y !@sh -c "echo -n %(commit) | xsel -ib"
+bind generic G ?git gc
+bind generic , none
+bind generic <LessThan> none
+bind generic ] parent
+bind generic [ back
+
+# Main
+
+#bind main w scroll-line-up
+#bind main s scroll-line-down
+bind main <F6> !@git fetch
+bind main <F7> !@git rebase
+bind main <F8> !@git pull
+bind main <F9> !@git push
+
+bind main ! !git revert %(commit)
+bind main c !@git checkout %(branch)
+bind main x !@git branch %(prompt) %(commit)
+bind main C !@git checkout %(commit) -B %(prompt)
+bind main M !@git branch -f %(prompt) %(commit)
+bind main U !@git switch -C %(prompt) %(commit)
+bind main H !?git reset --hard %(commit)
+bind main B !git rebase -i %(commit)^
+bind main P !git cherry-pick %(commit)
+bind main X !?git push
+bind main F !@sh -c "git show %(commit) --pretty=format: --name-only | xargs | xsel -ib"
+bind main G !<sh -c "vim -c 'Gedit %(commit)' $(ls | head -1)"
+bind main V !<sh -c "vim $(git show %(commit) --pretty=format: --name-only | xargs)"
+bind main e !@git format-patch -1 -p %(commit)
+bind main E !@sh -c "git-export-patch %(commit)"
+bind main . !>sh -c 'tig show $1:$2' -- %(commit) %(fileargs)
+
+# Diff
+
+#bind diff a previous
+#bind diff d next
+#bind diff b move-first-line
+bind diff <Up> move-up
+bind diff <Down> move-down
+
+# Edit all files of commit
+bind diff A !git add %(file)              # Add current file
+bind diff C !git commit -av               # Add and commit
+bind diff P !git add -p %(file)           # Partially add current file
+bind diff F !@sh -c "git show %(commit) --pretty=format: --name-only | xargs | xsel -ib"
+bind diff E !<sh -c "vim -c 'Gedit %(commit)' $(ls | head -1)"
+bind diff V !<sh -c "vim $(git show %(commit) --pretty=format: --name-only | xargs)"
+
+# Tree
+
+bind tree V !vim %(file)
+
+# Branch
+
+bind branch N !@git branch %(prompt)      # Create a new branch
+bind branch C !?@git checkout %(branch)   # Checkout selected branch
+
+# Status
+
+bind status T !@git add %(file)           # Add
+bind status A @git add -A                 # All
+bind status R !@git reset HEAD %(file)    # Reset
+bind status N !@git add -N %(file)        # Intent to add
+bind status a !?git commit --amend        # Amend last commit
+
+# Stage
+
+bind stage 1 stage-update-line            # Stage a single line
+bind stage C !@git commit                 # Commit staging changes
+bind stage <Up> move-up
+bind stage <Down> move-down
+
+# Colors
+# ------
+
+# The colors in the UI can be customized. In addition to the colors used
+# for the UI you can also define new colors to use in the pager, blob,
+# diff, and stage views by placing the text to match for in quotes.
+#
+# Prefix the name of a view to set a color only for that view, e.g.
+#
+#	color grep.file			blue	default
+#
+# As an example, this setting will to color Signed-off-by lines with a
+# yellow foreground color and use the default background color.
+#
+#	color "    Signed-off-by"	yellow	default
+#
+# Note the four leading spaces in the string to match. This is because
+# Git automatically indents commit messages by four spaces.
+
+color "---"			blue	default
+color "diff --"			yellow	default	bold
+color "--- "			yellow	default
+color "+++ "			yellow	default
+color "@@"			magenta	default
+color "+"			green	default
+color " +"			green	default
+color "-"			red	default
+color " -"			red	default
+color "index "			blue	default
+color "old file mode "		yellow	default
+color "new file mode "		yellow	default
+color "deleted file mode "	yellow	default
+color "copy from "		yellow	default
+color "copy to "		yellow	default
+color "rename from "		yellow	default
+color "rename to "		yellow	default
+color "similarity "		yellow	default
+color "dissimilarity "		yellow	default
+color "\ No newline at end of file"	blue	default
+color "diff-tree "		blue	default
+color "Author: "		cyan	default
+color "Commit: "		magenta	default
+color "Tagger: "		magenta	default
+color "Merge: "			blue	default
+color "Date: "			yellow	default
+color "AuthorDate: "		default	default
+color "CommitDate: "		default	default
+color "TaggerDate: "		yellow	default
+color "Refs: "			red	default
+color "Reflog: "		red	default
+color "Reflog message: "	yellow	default
+color "stash@{"			magenta	default
+color "commit "			cyan	default
+color "parent "			blue	default
+color "tree "			blue	default
+color "author "			magenta	default
+color "committer "		green	default
+color "    Signed-off-by:"	yellow	default
+color "    Acked-by:"		yellow	default
+color "    Reviewed-by:"	yellow	default
+color "    Helped-by:"		yellow	default
+color "    Reported-by:"	yellow	default
+color "    Mentored-by:"	yellow	default
+color "    Suggested-by:"	yellow	default
+color "    Cc:"			yellow	default
+color "    Noticed-by:"		yellow	default
+color "    Tested-by:"		yellow	default
+color "    Improved-by:"	yellow	default
+color "    Thanks-to:"		yellow	default
+color "    Based-on-patch-by:"	yellow	default
+color "    Contributions-by:"	yellow	default
+color "    Co-authored-by:"	yellow	default
+color "    Requested-by:"	yellow	default
+color "    Original-patch-by:"	yellow	default
+color "    Inspired-by:"	yellow	default
+color default			default	default	normal
+color cursor			black	yellow	bold
+color status			cyan	default
+color delimiter			magenta	default
+color date			cyan	default
+color mode			cyan	default
+color id			magenta	default
+color overflow			red	default
+color header			yellow	default
+color section			cyan	default
+color directory			yellow	default
+color file			default	default
+color grep.file			blue	default
+color file-size			default	default
+color line-number		cyan	default
+color title-blur		yellow	black	bold
+color title-focus		yellow	black	bold
+color main-commit		default	default
+color main-annotated		default	default	bold
+color main-tag			magenta	default	bold
+color main-tag			green	default	bold
+color main-local-tag		magenta	default
+color main-remote		red	default	bold
+color main-remote		yellow	default
+color main-replace		cyan	default
+color main-tracked		yellow	default	bold
+color main-ref			yellow	default
+color main-ref			cyan	default	bold
+color main-head			cyan	default	bold
+color stat-none			default	default
+color stat-staged		magenta	default
+color stat-unstaged		magenta	default
+color stat-untracked		magenta	default
+color help-group		blue	default
+color help-action		yellow	default
+color diff-stat			blue	default
+color diff-add-highlight	green	default	standout
+color diff-del-highlight	red	default	standout
+color palette-0			magenta	default
+color palette-1			yellow	default
+color palette-2			cyan	default
+color palette-3			green	default
+color palette-4			default	default
+color palette-5			white	default
+color palette-6			red	default
+color palette-7			magenta	default	bold
+color palette-8			yellow	default	bold
+color palette-9			cyan	default	bold
+color palette-10		green	default	bold
+color palette-11		default	default	bold
+color palette-12		white	default	bold
+color palette-13		red	default	bold
+color graph-commit		blue	default
+color search-result		black	yellow
+
+# Mappings for colors read from git configuration.
+# Set to "no" to disable.
+set git-colors = \
+	branch.current=main-head \
+	branch.local=main-ref \
+	branch.plain=main-ref \
+	branch.remote=main-remote \
+	\
+	diff.meta=diff-header \
+	diff.meta=diff-index \
+	diff.meta=diff-oldmode \
+	diff.meta=diff-newmode \
+	diff.frag=diff-chunk \
+	diff.old=diff-del \
+	diff.new=diff-add \
+	\
+	diff-highlight.oldHighlight=diff-del-highlight \
+	diff-highlight.newHighlight=diff-add-highlight \
+	\
+	grep.filename=grep.file \
+	grep.linenumber=grep.line-number \
+	grep.separator=grep.delimiter \
+	\
+	status.branch=status.header \
+	status.added=stat-staged \
+	status.updated=stat-staged \
+	status.changed=stat-unstaged \
+	status.untracked=stat-untracked
+
+# You can almost use vim: ft=muttrc
