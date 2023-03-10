@@ -1,0 +1,79 @@
+// Place your settings in this file to overwrite the default settings
+{
+	"editor.fontFamily": "Fira Code",
+	"editor.fontLigatures": true,
+	"editor.fontSize": 13,
+	"editor.tabSize": 4,
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"editor.renderWhitespace": "boundary",
+	"update.showReleaseNotes": false,
+	"update.mode": "none",
+	"update.enableWindowsBackgroundUpdates": false,
+	"workbench.editor.showTabs": false,
+	"workbench.editor.enablePreviewFromQuickOpen": false,
+	"workbench.enableExperiments": false,
+	"editor.minimap.enabled": false,
+	"breadcrumbs.enabled": true,
+	"files.insertFinalNewline": true,
+	"files.trimTrailingWhitespace": true,
+	"files.trimFinalNewlines": true,
+	"files.associations": {
+		"*.qss": "css"
+	},
+
+	"[c]": {
+		"editor.tabSize": 4
+	},
+
+	"[cpp]": {
+		"editor.tabSize": 4
+	},
+
+	"[go]": {
+		"editor.tabSize": 4
+	},
+
+	"[lua]": {
+		"editor.tabSize": 2,
+		"editor.insertSpaces": false
+	},
+
+	"[ruby]": {
+		"editor.tabSize": 2,
+		"editor.insertSpaces": true
+	},
+
+	"[python]": {
+		"editor.tabSize": 4,
+		"editor.insertSpaces": true
+	},
+	"html.format.preserveNewLines": false,
+	"debug.node.autoAttach": "on",
+	"todo-tree.tree.showScanModeButton": false,
+	"workbench.editorAssociations": {
+		"*.ipynb": "jupyter-notebook"
+	},
+	"todo-tree.general.tags": [
+		"BUG",
+		"HACK",
+		"FIXME",
+		"TODO",
+		"XXX",
+		"[ ]",
+		"[x]"
+	],
+	"todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+	"notebook.cellToolbarLocation": {
+		"default": "right",
+		"jupyter-notebook": "left"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "Glavin001.unibeautify-vscode"
+	},
+	"workbench.colorTheme": "Solarized Light+",
+	"Lua.telemetry.enable": false,
+	"gitlens.showWelcomeOnInstall": false,
+	"gitlens.showWhatsNewAfterUpgrades": false,
+	"gitlens.codeLens.enabled": false
+}
