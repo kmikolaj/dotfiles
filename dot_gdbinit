@@ -1,0 +1,24 @@
+set confirm off
+set verbose on
+set print pretty
+set complaints 0
+
+set history save
+set history expansion on
+set history remove-duplicates unlimited
+set history filename ~/.cache/gdb/history
+set history size 512
+
+set default-collect $_ret, $regs, $locals, $args
+
+set auto-load local-gdbinit on
+add-auto-load-safe-path /
+
+# Disable printing of static members. Qt has too many, it clutters the output
+set print static-members off
+
+# Show the real classname of object instances - e.g. (Kded *) 0x8073440 instead of (class QObject *) 0x8073440
+set print object
+
+# enable debuginfod
+set debuginfod enabled on
