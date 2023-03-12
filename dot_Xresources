@@ -1,0 +1,138 @@
+! URxvt ------------------------------------------------------------
+
+!URxvt.termName:            rxvt
+URxvt.imLocale:             pl_PL.UTF-8
+URxvt.scrollBar:            false
+URxvt.saveLines:            1024
+URxvt.cursorBlink:          false
+!URxvt.letterSpace:          -2
+URxvt.preeditType:          Root
+URxvt.skipBuiltinGlyphs:    true
+!URxvt.iso14755:             false
+URxvt.buffered:             true
+
+URxvt*scrollTtyOutput:      false
+URxvt*scrollWithBuffer:     false
+URxvt*scrollTtyKeypress:    true
+URxvt*skipScroll:           true
+
+!URxvt.depth:               32
+!has to match vim colorscheme
+!URxvt.cursorColor:         #00ff00
+!URxvt.throughColor:        #8080f0
+!URxvt.highlightColor:      #708070
+URxvt.urgentOnBell:         true
+URxvt.visualBell:           false
+URxvt.inheritPixmap:        false
+URxvt.tintColor:            white
+URxvt.fading:               25
+URxvt.shading:              10
+!URxvt.font:                xft:Terminus:size=10
+!URxvt.font:                xft:inconsolata:size=12
+
+!URxvt.font:                 xft:Envy Code R for Powerline:regular:size=9
+!URxvt.imFont:               xft:Envy Code R for Powerline:regular:size=9
+!URxvt.boldFont:             xft:Envy Code R for Powerline:bold:size=9
+!URxvt.italicFont:           xft:Envy Code R for Powerline:italic:size=9
+!URxvt.boldItalicFont:       xft:Envy Code R for Powerline:bold:italic:size=9
+
+!URxvt.font:                 xft:DejaVu Sans Mono for Powerline:regular:size=9
+!URxvt.imFont:               xft:DejaVu Sans Mono for Powerline:regular:size=9
+!URxvt.boldFont:             xft:DejaVu Sans Mono for Powerline:bold:size=9
+!URxvt.italicFont:           xft:DejaVu Sans Mono for Powerline:italic:size=9
+!URxvt.boldItalicFont:       xft:DejaVu Sans Mono for Powerline:bold:italic:size=9
+
+URxvt.font: -*-terminus-medium-*-normal-*-14-*-*-*-*-*-iso10646-1
+
+URxvt.keysym.Control-Up:    \033[1;5A
+URxvt.keysym.Control-Down:  \033[1;5B
+URxvt.keysym.Control-Left:  \033[1;5D
+URxvt.keysym.Control-Right: \033[1;5C
+URxvt.keysym.Meta-Left:     \033[1;3D
+URxvt.keysym.Meta-Right:    \033[1;3C
+URxvt.keysym.Meta-Up:       \033[1;3A
+URxvt.keysym.Meta-Down:     \033[1;3B
+
+URxvt.keysym.KP_End:        \033[8~
+URxvt.keysym.KP_Home:       \033[7~
+URxvt.keysym.KP_Prior:      \033[5~
+URxvt.keysym.KP_Next:       \033[6~
+URxvt.keysym.KP_Down:       \033[B
+URxvt.keysym.KP_Up:         \033[A
+URxvt.keysym.KP_Right:      \033[C
+URxvt.keysym.KP_Left:       \033[D
+URxvt.keysym.KP_Insert:     \033[2~
+URxvt.keysym.KP_Delete:     \033[3~
+URxvt.keysym.KP_Add:        +
+URxvt.keysym.KP_Subtract:   -
+URxvt.keysym.KP_Divide:     /
+URxvt.keysym.KP_Multiply:   *
+URxvt.keysym.KP_Enter:      \012
+
+URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+URxvt.keysym.M-s:           perl:keyboard-select:search
+!URxvt.keysym.M-c:           perl:clipboard:copy
+!URxvt.keysym.M-v:           perl:clipboard:paste
+!URxvt.keysym.M-C-v:         perl:clipboard:paste_escaped
+URxvt.url-select.launcher:  xlinks -g
+URxvt.url-select.underline: true
+
+URxvt.tabbed.tabbar-fg:     7
+URxvt.tabbed.tabbar-bg:     0
+URxvt.tabbed.tab-fg:        15
+URxvt.tabbed.tab-bg:        12
+
+! Xpdf ------------------------------------------------------------
+xpdf*enableFreetype:        yes
+xpdf*antialias:             yes
+xpdf*foreground:            black
+xpdf*background:            grey
+xpdf*urlCommand:            /usr/bin/firefox %s
+
+! Xft settings ----------------------------------------------------
+
+Xft.dpi:                    96
+Xft.rgba:                   rgb
+Xft.antialias:              true
+Xft.autohint:               false
+Xft.hinting:                true
+Xft.hintstyle:              hintslight
+Xft.lcdfilter:              lcddefault
+
+! XTerm ------------------------------------------------------------
+
+XTerm*termName:             xterm-256color
+!XTerm*faceName:            Terminus:size=12
+!XTerm*faceName:             xft:Envy Code R for Powerline:size=10
+XTerm*faceName:             xft:DejaVu Sans Mono for Powerline:size=9
+!XTerm*font:                 -*-terminus-medium-*-normal-*-14-*-*-*-*-*-iso10646-1
+XTerm.vt100.geometry:       80x32
+XTerm*cutNewline:           false
+XTerm*on4Clicks:            group
+XTerm*on5Clicks:            page
+XTerm*internalBorder:       1
+XTerm*metaSendsEscape:      true
+XTerm*utf8Title:            true
+XTerm*multiScroll:          true
+XTerm*saveLines:            1024
+XTerm*cursorBlink:          false
+XTerm*bellIsUrgent:         true
+XTerm*fullscreen:           never
+XTerm*utf8:                 always
+!XTerm*tcapFunctionKeys:    true
+XTerm.vt100.translations: #override \
+    :<KeyPress> KP_Add:string("+") \n\
+    :<KeyPress> KP_Subtract:string("-") \n\
+    :<KeyPress> KP_Multiply:string("*") \n\
+    :<KeyPress> KP_Divide:string("/") \n\
+    :<KeyPress> KP_Enter:string(0x0A) \n\
+    :<KeyPress> KP_Delete:string("\033[3~") \n
+
+!XTerm*background:          #121212
+!XTerm*foreground:          #ddccbb
+!XTerm*cursorColor:         #00ff00
+
+! terminal colors --------------------------------------------------
+#include "/home/kuba/.Xcolors"
