@@ -1,0 +1,82 @@
+# Compiled object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Compiled dynamic libraries
+*.dll
+*.so*
+*.dylib
+
+# Compiled static libraries
+*.lai
+*.la
+*.a
+
+# Core dump
+core
+
+# Makefiles
+Makefile
+*.mk
+.dep.inc
+
+# Svn
+.svn
+
+# Qt
+ui_*.h
+moc_*.cpp*
+moc_*.h*
+qrc_*.cpp*
+*.qm
+
+# Qmake
+.qmake.*
+
+# Diff
+*.orig
+*.rej
+
+# Vim
+*.swp
+
+# YouCompleteMe
+.ycm_extra_conf.py
+.ycm_extra_conf.pyc
+
+# QtCreator
+*.pro.user
+*.pro.user.*
+*build-*
+*.autosave
+CMakeLists.txt.user
+CMakeLists.txt.user.*
+
+# Netbeans
+nbproject/*.mk
+nbproject/*.pro
+nbproject/*.bash
+nbproject/private/*
+
+# Visual Studio Code
+.vscode/*
+
+# Intellij Idea
+.idea/*
+
+# Python
+*.pyc
+__pycache__/*
+
+# Ctags
+tags
+
+# Cspope
+cscope.out
+
+# Generic
+*~
+*.bak
+*.out

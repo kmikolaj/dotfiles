@@ -1,0 +1,55 @@
+[user]
+	name = Jakub Mikołajczyk
+	email = kmikolaj@gmail.com
+[log]
+	decorate = auto
+[core]
+	autocrlf = input
+	safecrlf = true
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[diff]
+	algorithm = histogram
+[diff "bin"]
+	textconv = hexdump -v -C
+[grep]
+	lineNumber = true
+[merge]
+	ff = no
+	tool = meld
+	conflictStyle = diff3
+[mergetool]
+	prompt = false
+[mergetool "smerge"]
+	cmd = smerge mergetool \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+	hideResolved = true
+[mergetool "meld"]
+	hideResolved = true
+	cmd = meld --auto-merge "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
+[push]
+	default = simple
+	followTags = true
+[pull]
+	rebase = true
+[rebase]
+	autosquash = true
+[color]
+	ui = auto
+[rerere]
+	enabled = true
+[icdiff]
+	options = --line-numbers --no-bold
+[credential]
+	helper = store
+[init]
+	defaultBranch = master
+[alias]
+	amend = commit --amend
+	st = status
+	ls = log --oneline
+	last = log -1 HEAD --stat
+	cm = commit -m
+	rv = remote -v
+	dv = difftool -t vimdiff -y
+	sw = switch
+	update = !git pull origin $(git rev-parse --abbrev-ref HEAD)
+	sync = "!f() { [ -z $1 ] || (git stash; git switch $1; git pull origin $1; git stash pop;) && return 1 ; }; f"
