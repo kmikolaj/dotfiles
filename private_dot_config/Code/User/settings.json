@@ -75,5 +75,6 @@
 	"Lua.telemetry.enable": false,
 	"gitlens.showWelcomeOnInstall": false,
 	"gitlens.showWhatsNewAfterUpgrades": false,
-	"gitlens.codeLens.enabled": false
+	"gitlens.codeLens.enabled": false,
+	"tabnine.experimentalAutoImports": false
 }
