@@ -49,7 +49,7 @@ qrc_*.cpp*
 # QtCreator
 *.pro.user
 *.pro.user.*
-*build-*
+*build-*/
 *.autosave
 CMakeLists.txt.user
 CMakeLists.txt.user.*

@@ -7,6 +7,7 @@
 	autocrlf = input
 	safecrlf = true
 	pager = diff-so-fancy | less --tabs=4 -RFX
+	editor = vim
 [diff]
 	algorithm = histogram
 [diff "bin"]
