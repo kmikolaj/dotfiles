@@ -189,7 +189,8 @@ set pager-autoscroll		= no		# Scroll the pager view automatically while loading?
 # ---------------
 
 #bind generic g view-next
-bind generic b view-refs
+bind generic r view-refs
+bind generic b view-blame
 bind generic s view-status
 bind generic w view-stage
 bind generic F !git fetch
