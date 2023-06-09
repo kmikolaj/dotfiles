@@ -72,10 +72,11 @@
 		"editor.defaultFormatter": "Glavin001.unibeautify-vscode"
 	},
 	"workbench.colorTheme": "Solarized Light+",
-	"Lua.telemetry.enable": false,
+	"git.defaultBranchName": "master",
 	"gitlens.showWelcomeOnInstall": false,
 	"gitlens.showWhatsNewAfterUpgrades": false,
 	"gitlens.codeLens.enabled": false,
 	"gitlens.telemetry.enabled": false,
+	"Lua.telemetry.enable": false,
 	"tabnine.experimentalAutoImports": false
 }
