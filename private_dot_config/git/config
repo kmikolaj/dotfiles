@@ -6,7 +6,7 @@
 [core]
 	autocrlf = input
 	safecrlf = true
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	;pager = diff-so-fancy | less --tabs=4 -RFX
 	editor = vim
 [diff]
 	algorithm = histogram
@@ -38,9 +38,7 @@
 [rerere]
 	enabled = true
 [icdiff]
-	options = --line-numbers --no-bold
-[credential]
-	helper = store
+	options = --line-numbers --no-bold --is-git-diff
 [init]
 	defaultBranch = master
 [alias]
@@ -51,6 +49,11 @@
 	cm = commit -m
 	rv = remote -v
 	dv = difftool -t vimdiff -y
+	undo = reset --soft HEAD^
 	sw = switch
+	wdiff = diff --word-diff=color
 	update = !git pull origin $(git rev-parse --abbrev-ref HEAD)
-	sync = "!f() { [ -z $1 ] || (git stash; git switch $1; git pull origin $1; git stash pop;) && return 1 ; }; f"
+	sync = "!f() { [ -z $1 ] || (git remote prune $1; git remote update $1;) && return 1 ; }; f"
+	get = "!f() { [ -z $1 ] || (git stash; git switch $1; git pull --rebase origin $1; git stash pop;) && return 1 ; }; f"
+[credential]
+	helper = store
