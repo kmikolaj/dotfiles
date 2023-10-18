@@ -1,0 +1,113 @@
+# hardware encoding
+hwdec=vaapi
+
+# enabled codecs
+hwdec-codecs=h264,mpeg2video,vc1
+
+# video output
+vo=gpu
+
+# profile
+profile=gpu-hq
+
+# scaling quality
+#scale=ewa_lanczossharp
+#cscale=ewa_lanczossharp
+
+# audio output
+#ao=pipewire
+ao=pulse
+
+# stereo
+audio-channels=auto-safe
+
+# no-video when playing audio file
+audio-display=no
+
+# framedropping
+framedrop=vo
+
+# do not disable compositor (needed for KDE stability)
+x11-bypass-compositor=no
+
+# subrip subtitles
+sub-auto=fuzzy
+#sub-codepage=enca:pl:cp1250
+sub-codepage=cp1250
+sub-font="MetaPro"
+sub-font-size=70
+sub-shadow-offset=0
+sub-border-size=2.4
+subs-with-matching-audio=yes
+# use script findsrt
+#sub-file-paths=sub:subs:subtitles:Sub:Subs:Subtitles
+
+# fonts
+embeddedfonts=no
+sub-scale-with-window=yes
+sub-scale-by-window=yes
+
+# ass subtitles
+sub-ass-override=scale
+sub-ass-force-style='Fontname=MetaPro,Fontsize=28,Shadow=0,Outline=0.5'
+sub-ass-scale-with-window=yes
+sub-ass-force-margins=yes
+
+# OSD
+osd-font-size=30
+osd-bar-align-x=0
+osd-bar-align-y=0
+
+# Menu OSD
+#menu=1
+
+# Languages
+alang=pol,pl,eng,en
+slang=pol,pl,eng,en
+
+# Save
+#save-position-on-quit
+
+# Watch-later directory
+watch-later-directory=~/.cache/mpv/watch-later
+
+# Screenshots directory
+screenshot-directory=~/.cache/mpv/screenshots
+
+# Per-file config
+use-filedir-conf=yes
+
+[streaming]
+profile-desc=cond:(is_remote_filesystem(get('path')))
+cache=yes
+cache-on-disk=no
+cache-secs=900
+demuxer-seekable-cache=yes
+demuxer-max-back-bytes=150MiB
+demuxer-max-bytes=600MiB
+stream-buffer-size=4096KiB
+
+[local]
+profile-desc=cond:(not is_remote_filesystem(get('path')))
+cache=yes
+cache-on-disk=no
+cache-secs=300
+demuxer-seekable-cache=yes
+demuxer-max-back-bytes=50MiB
+demuxer-max-bytes=100MiB
+
+[nfs]
+cache=yes
+cache-on-disk=no
+cache-secs=300
+demuxer-max-bytes=600MiB
+stream-buffer-size=1024KiB
+
+[nocache]
+cache=no
+cache-on-disk=no
+demuxer-seekable-cache=no
+
+[webm-extension]
+profile-cond=get('filename', ''):match('%.webm$') ~= nil
+hr-seek=yes
