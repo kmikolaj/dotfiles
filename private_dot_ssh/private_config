@@ -1,6 +1,6 @@
 # remember passphrase is session
 Host *
-  AddKeysToAgent yes
+    AddKeysToAgent yes
 
 # router openwrt
 Host 192.168.10.1
