@@ -219,6 +219,7 @@ bind main M !@git branch -f %(prompt) %(commit)
 bind main U !@git switch -C %(prompt) %(commit)
 bind main H !?git reset --hard %(commit)
 bind main B !git rebase -i %(commit)^
+bind main W !git rebase -Xignore-all-space -i %(commit)^
 bind main P !git cherry-pick %(commit)
 bind main X !?git push
 bind main F !@sh -c "git show %(commit) --pretty=format: --name-only | xargs | xsel -ib"
