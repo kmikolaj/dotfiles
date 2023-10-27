@@ -46,7 +46,8 @@
 
 	"[python]": {
 		"editor.tabSize": 4,
-		"editor.insertSpaces": true
+		"editor.insertSpaces": true,
+		"editor.formatOnType": true
 	},
 	"html.format.preserveNewLines": false,
 	"debug.node.autoAttach": "on",
