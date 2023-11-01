@@ -122,13 +122,9 @@ XTerm*bellIsUrgent:         true
 XTerm*fullscreen:           never
 XTerm*utf8:                 always
 !XTerm*tcapFunctionKeys:    true
+
 XTerm.vt100.translations: #override \
-    :<KeyPress> KP_Add:string("+") \n\
-    :<KeyPress> KP_Subtract:string("-") \n\
-    :<KeyPress> KP_Multiply:string("*") \n\
-    :<KeyPress> KP_Divide:string("/") \n\
-    :<KeyPress> KP_Enter:string(0x0A) \n\
-    :<KeyPress> KP_Delete:string("\033[3~") \n
+	Shift <KeyPress> KP_Insert: insert-selection(CLIPBOARD) \n
 
 !XTerm*background:          #121212
 !XTerm*foreground:          #ddccbb
