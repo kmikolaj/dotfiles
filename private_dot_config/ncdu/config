@@ -1,0 +1,5 @@
+# Disable file deletion
+--disable-delete
+
+# Exclude .git directories
+--exclude .git
