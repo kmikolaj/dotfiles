@@ -30,6 +30,7 @@
 	default = simple
 	followTags = true
 [pull]
+	ff = only
 	rebase = true
 [rebase]
 	autosquash = true
@@ -52,8 +53,9 @@
 	undo = reset --soft HEAD^
 	sw = switch
 	wdiff = diff --word-diff=color
+	ffpull = pull --ff
 	update = !git pull origin $(git rev-parse --abbrev-ref HEAD)
 	sync = "!f() { [ -z $1 ] || (git remote prune $1; git remote update $1;) && return 1 ; }; f"
-	get = "!f() { [ -z $1 ] || (git stash; git switch $1; git pull --rebase origin $1; git stash pop;) && return 1 ; }; f"
+	get = "!f() { [ -z $1 ] || (git stash; git switch $1; git pull --rebase --ff origin $1; git stash pop;) && return 1 ; }; f"
 [credential]
 	helper = store
