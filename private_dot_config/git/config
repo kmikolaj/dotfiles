@@ -51,6 +51,7 @@
 	rv = remote -v
 	dv = difftool -t vimdiff -y
 	undo = reset --soft HEAD^
+	root = rev-parse --show-toplevel
 	sw = switch
 	wdiff = diff --word-diff=color
 	ffpull = pull --ff
