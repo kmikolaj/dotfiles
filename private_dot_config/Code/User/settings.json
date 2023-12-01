@@ -79,5 +79,6 @@
 	"gitlens.codeLens.enabled": false,
 	"gitlens.telemetry.enabled": false,
 	"Lua.telemetry.enable": false,
+	"C_Cpp.intelliSenseEngine": "disabled",
 	"tabnine.experimentalAutoImports": false
 }
