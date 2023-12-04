@@ -8,16 +8,25 @@
 	safecrlf = true
 	;pager = diff-so-fancy | less --tabs=4 -RFX
 	editor = vim
+	commitGraph = true
 [diff]
 	algorithm = histogram
+	colorMoved = zebra
+	tool = meld
+[difftool]
+	prompt = false
 [diff "bin"]
 	textconv = hexdump -v -C
+[gc]
+	writeCommitGraph = true
+	reflogExpire = 200
+	reflogExpireUnreachable = 90
 [grep]
 	lineNumber = true
 [merge]
 	ff = no
-	tool = meld
 	conflictStyle = diff3
+	tool = meld
 [mergetool]
 	prompt = false
 [mergetool "smerge"]
@@ -26,6 +35,10 @@
 [mergetool "meld"]
 	hideResolved = true
 	cmd = meld --auto-merge "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
+[fetch]
+	prune = true
+[pager]
+	difftool = true
 [push]
 	default = simple
 	followTags = true
@@ -34,6 +47,7 @@
 	rebase = true
 [rebase]
 	autosquash = true
+	autostash = true
 [color]
 	ui = auto
 [rerere]
@@ -49,13 +63,17 @@
 	last = log -1 HEAD --stat
 	cm = commit -m
 	rv = remote -v
-	dv = difftool -t vimdiff -y
+	dv = difftool -y -t nvimdiff
 	undo = reset --soft HEAD^
+	unstage = reset HEAD --
 	root = rev-parse --show-toplevel
 	sw = switch
 	wdiff = diff --word-diff=color
+	difft = difftool -y -x 'difft --color always --display side-by-side-show-both'
 	ffpull = pull --ff
 	update = !git pull origin $(git rev-parse --abbrev-ref HEAD)
+	graph = commit-graph write --reachable
+	recover = "!f() { [ -z $1 ] || [ -z $2 ] || (git checkout $1 -- $2;) && return 1; }; f"
 	sync = "!f() { [ -z $1 ] || (git remote prune $1; git remote update $1;) && return 1 ; }; f"
 	get = "!f() { [ -z $1 ] || (git stash; git switch $1; git pull --rebase --ff origin $1; git stash pop;) && return 1 ; }; f"
 [credential]
