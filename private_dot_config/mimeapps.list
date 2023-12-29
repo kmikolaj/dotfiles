@@ -1,4 +1,5 @@
 [Default Applications]
+video/vnd.avi=mpv.desktop;
 video/mp4=mpv.desktop;
 video/webm=mpv.desktop;
 video/x-ms-asf=mpv.desktop;
