@@ -8,11 +8,12 @@ hwdec-codecs=h264,mpeg2video,vc1
 vo=gpu
 
 # profile
-profile=gpu-hq
+#profile=default
+#profile=fast
 
 # scaling quality
-#scale=ewa_lanczossharp
-#cscale=ewa_lanczossharp
+#scale=lanczos
+#cscale=lanczos
 
 # audio output
 #ao=pipewire
@@ -49,7 +50,7 @@ sub-scale-by-window=yes
 
 # ass subtitles
 sub-ass-override=force
-sub-ass-force-style='Fontname=MetaPro,Fontsize=28,Shadow=0,Outline=0.5'
+sub-ass-style-overrides='Fontname=MetaPro,Fontsize=28,Shadow=0,Outline=0.5'
 sub-ass-scale-with-window=yes
 sub-ass-force-margins=yes
 
