@@ -44,10 +44,12 @@
 	followTags = true
 [pull]
 	ff = only
-	rebase = true
+	rebase = merges
 [rebase]
 	autosquash = true
 	autostash = true
+	rebaseMerges = true
+	updateRefs = true
 [color]
 	ui = auto
 [rerere]
