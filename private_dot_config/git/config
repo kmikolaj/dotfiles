@@ -7,7 +7,7 @@
 	autocrlf = input
 	safecrlf = true
 	;pager = diff-so-fancy | less --tabs=4 -RFX
-	editor = vim
+	editor = nvim
 	commitGraph = true
 [diff]
 	algorithm = histogram
@@ -60,6 +60,7 @@
 	defaultBranch = master
 [alias]
 	amend = commit --amend
+	fastamend = commit --amend --no-edit
 	st = status
 	ls = log --oneline
 	last = log -1 HEAD --stat
@@ -73,6 +74,7 @@
 	wdiff = diff --word-diff=color
 	difft = difftool -y -x 'difft --color always --display side-by-side-show-both'
 	ffpull = pull --ff
+	fpush = push --force-with-lease
 	update = !git pull origin $(git rev-parse --abbrev-ref HEAD)
 	graph = commit-graph write --reachable
 	recover = "!f() { [ -z $1 ] || [ -z $2 ] || (git checkout $1 -- $2;) && return 1; }; f"
