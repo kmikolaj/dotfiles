@@ -1,18 +1,6 @@
 # Compiled object files
-*.slo
-*.lo
 *.o
 *.obj
-
-# Compiled dynamic libraries
-*.dll
-*.so*
-*.dylib
-
-# Compiled static libraries
-*.lai
-*.la
-*.a
 
 # Core dump
 core
