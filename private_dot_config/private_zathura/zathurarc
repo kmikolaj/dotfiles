@@ -1,0 +1,12 @@
+set sandbox normal
+#set adjust-open width
+set adjust-open best-fit
+set pages-per-row 1
+set window-title-basename true
+set selection-clipboard clipboard
+set advance-pages-per-row true
+
+# must be enabled for save on quit feature
+#set database null
+
+# vim: ft=conf:
