@@ -1,0 +1,13 @@
+[registries.crates-io]
+protocol = "sparse"
+
+[target.armv7-unknown-linux-gnueabihf]
+linker = "/home/kuba/virt/raspberrypi/tools/arm-bcm2708/arm-linux-gnueabihf/bin/arm-linux-gnueabihf-gcc"
+rustflags = [
+	"-C", "link-arg=--sysroot=/home/kuba/virt/raspberrypi/sysroot",
+	"-C", "link-arg=-B/home/kuba/virt/raspberrypi/sysroot/usr/lib/arm-linux-gnueabihf",
+	"-C", "link-arg=-Wl,-rpath-link,/home/kuba/virt/raspberrypi/sysroot/usr/lib",
+	"-C", "link-arg=-Wl,-rpath-link,/home/kuba/virt/raspberrypi/sysroot/usr/lib/arm-linux-gnueabihf",
+	"-C", "target-cpu=cortex-a9",
+	"-C", "target-feature=+armv7-a,+neonfp",
+]
