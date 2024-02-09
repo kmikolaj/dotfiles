@@ -9,6 +9,12 @@
 	;pager = diff-so-fancy | less --tabs=4 -RFX
 	editor = nvim
 	commitGraph = true
+	packedGitLimit = 512m 
+	packedGitWindowSize = 512m 
+[pack] 
+	deltaCacheSize = 2047m 
+	packSizeLimit = 2047m 
+	windowMemory = 2047m
 [diff]
 	algorithm = histogram
 	colorMoved = zebra
