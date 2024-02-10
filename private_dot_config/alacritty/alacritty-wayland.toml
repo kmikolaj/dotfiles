@@ -1,0 +1,43 @@
+import = ["/home/kuba/.config/alacritty/themes/themes/solarized_dark.toml"]
+
+[bell]
+animation = "EaseOutExpo"
+color = "#ffffff"
+duration = 1
+
+[font]
+size = 10.0
+
+[font.bold]
+family = "IosevkaTerm NFM"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.italic]
+family = "IosevkaTerm NFM"
+
+[font.normal]
+family = "IosevkaTerm NFM"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "Insert"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = 82
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[2~"
+key = 82
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[selection]
+save_to_clipboard = true
