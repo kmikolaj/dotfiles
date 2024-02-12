@@ -8,7 +8,6 @@ hwdec-codecs=h264,mpeg2video,vc1
 vo=gpu
 
 # profile
-#profile=default
 #profile=fast
 
 # scaling quality
@@ -55,9 +54,11 @@ sub-ass-scale-with-window=yes
 sub-ass-force-margins=yes
 
 # OSD
+osd-bar=yes
 osd-font-size=30
 osd-bar-align-x=0
 osd-bar-align-y=0
+osd-bar-border-size=1
 
 # Menu OSD
 #menu=1
@@ -80,6 +81,7 @@ use-filedir-conf=yes
 
 [streaming]
 profile-desc=cond:(is_remote_filesystem(get('path')))
+#profile-cond=demuxer_via_network
 cache=yes
 cache-on-disk=no
 cache-secs=900
