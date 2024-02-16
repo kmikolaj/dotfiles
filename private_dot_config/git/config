@@ -11,13 +11,11 @@
 	commitGraph = true
 	packedGitLimit = 512m 
 	packedGitWindowSize = 512m 
-[pack] 
-	deltaCacheSize = 2047m 
-	packSizeLimit = 2047m 
-	windowMemory = 2047m
+[branch]
+	sort = -committerdate
 [diff]
 	algorithm = histogram
-	colorMoved = zebra
+	colorMoved = no
 	tool = meld
 [difftool]
 	prompt = false
@@ -31,13 +29,13 @@
 	lineNumber = true
 [merge]
 	ff = no
-	conflictStyle = diff3
+	conflictStyle = zdiff3
 	tool = meld
 [mergetool]
 	prompt = false
 [mergetool "smerge"]
-	cmd = smerge mergetool \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
 	hideResolved = true
+	cmd = smerge mergetool \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
 [mergetool "meld"]
 	hideResolved = true
 	cmd = meld --auto-merge "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
@@ -48,6 +46,7 @@
 [push]
 	default = simple
 	followTags = true
+	;autoSetupRemote = true
 [pull]
 	ff = only
 	rebase = merges
@@ -64,6 +63,10 @@
 	options = --line-numbers --no-bold --is-git-diff
 [init]
 	defaultBranch = master
+[pack] 
+	deltaCacheSize = 2047m 
+	packSizeLimit = 2047m 
+	windowMemory = 2047m
 [alias]
 	amend = commit --amend
 	fastamend = commit --amend --no-edit
@@ -72,6 +75,7 @@
 	last = log -1 HEAD --stat
 	cm = commit -m
 	rv = remote -v
+	bv = branch -vv
 	dv = difftool -y -t nvimdiff
 	undo = reset --soft HEAD^
 	unstage = reset HEAD --
@@ -81,6 +85,7 @@
 	difft = difftool -y -x 'difft --color always --display side-by-side-show-both'
 	ffpull = pull --ff
 	fpush = push --force-with-lease
+	track = push --set-upstream 
 	update = !git pull origin $(git rev-parse --abbrev-ref HEAD)
 	graph = commit-graph write --reachable
 	recover = "!f() { [ -z $1 ] || [ -z $2 ] || (git checkout $1 -- $2;) && return 1; }; f"
