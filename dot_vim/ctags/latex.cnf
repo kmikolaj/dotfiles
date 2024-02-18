@@ -1,0 +1,9 @@
+--langdef=latex
+--langmap=latex:.tex
+--regex-latex=/\\label\s*\{([^}]*)\}/\1/l,label/
+--regex-latex=/\\section\s*\{([^}]*)\}/\1/s,section/
+--regex-latex=/\\subsection\s*\{([^}]*)\}/\1/t,subsection/
+--regex-latex=/\\subsubsection\s*\{([^}]*)\}/\1/u,subsubsection/
+--regex-latex=/\\section\*\{([^}]*)\}/\1/s,section/
+--regex-latex=/\\subsection\*\{([^}]*)\}/\1/t,subsection/
+--regex-latex=/\\subsubsection\*\{([^}]*)\}/\1/u,subsubsection/
