@@ -2,4 +2,4 @@
 --disable-delete
 
 # Exclude .git directories
---exclude .git
+# --exclude .git
