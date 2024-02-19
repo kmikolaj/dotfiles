@@ -58,6 +58,9 @@ nbproject/private/*
 *.pyc
 __pycache__/*
 
+# Rust
+Cargo.lock
+
 # Ctags
 tags
 
