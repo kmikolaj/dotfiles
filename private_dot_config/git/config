@@ -9,8 +9,8 @@
 	;pager = diff-so-fancy | less --tabs=4 -RFX
 	editor = nvim
 	commitGraph = true
-	packedGitLimit = 512m 
-	packedGitWindowSize = 512m 
+	packedGitLimit = 512m
+	packedGitWindowSize = 512m
 [branch]
 	sort = -committerdate
 [diff]
@@ -63,9 +63,9 @@
 	options = --line-numbers --no-bold --is-git-diff
 [init]
 	defaultBranch = master
-[pack] 
-	deltaCacheSize = 2047m 
-	packSizeLimit = 2047m 
+[pack]
+	deltaCacheSize = 2047m
+	packSizeLimit = 2047m
 	windowMemory = 2047m
 [alias]
 	amend = commit --amend
@@ -85,11 +85,13 @@
 	difft = difftool -y -x 'difft --color always --display side-by-side-show-both'
 	ffpull = pull --ff
 	fpush = push --force-with-lease
-	track = push --set-upstream 
+	track = push --set-upstream
+	untrack = branch --unset-upstream
 	update = !git pull origin $(git rev-parse --abbrev-ref HEAD)
 	graph = commit-graph write --reachable
 	recover = "!f() { [ -z $1 ] || [ -z $2 ] || (git checkout $1 -- $2;) && return 1; }; f"
 	sync = "!f() { [ -z $1 ] || (git remote prune $1; git remote update $1;) && return 1 ; }; f"
 	get = "!f() { [ -z $1 ] || (git stash; git switch $1; git pull --rebase --ff origin $1; git stash pop;) && return 1 ; }; f"
+	browse = "!f() { (git switch $(git branch --sort=-committerdate --no-merged | fzf) ) }; f"
 [credential]
 	helper = store
