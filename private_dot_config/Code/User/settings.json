@@ -84,6 +84,7 @@
 	"gitlens.telemetry.enabled": false,
 	"Lua.telemetry.enable": false,
 	"C_Cpp.intelliSenseEngine": "disabled",
+	"rust-analyzer.check.command": "clippy",
 	"cmake.showOptionsMovedNotification": false,
 	"tabnine.experimentalAutoImports": false,
 	"update.showReleaseNotes": false,
@@ -91,5 +92,7 @@
 	"update.enableWindowsBackgroundUpdates": false,
 	"terminal.integrated.fontFamily": "monospace",
 	"terminal.integrated.fontSize": 12,
-	"zenMode.fullScreen": false
+	"zenMode.fullScreen": false,
+	"dev.containers.dockerPath": "podman",
+	"dev.containers.dockerComposePath": "podman-compose"
 }
