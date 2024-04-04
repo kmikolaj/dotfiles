@@ -1,0 +1,11 @@
+theme = "solarized_dark"
+
+[editor]
+cursorline = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+
+[keys.normal]
+"ins" = "insert_mode"
