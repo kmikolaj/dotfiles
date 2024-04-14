@@ -1,6 +1,7 @@
 [user]
 	name = Jakub Mikołajczyk
 	email = kmikolaj@gmail.com
+	useConfigOnly = true
 [log]
 	decorate = auto
 [core]
@@ -54,7 +55,7 @@
 	autosquash = true
 	autostash = true
 	rebaseMerges = true
-	updateRefs = true
+	updateRefs = false
 [color]
 	ui = auto
 [rerere]
