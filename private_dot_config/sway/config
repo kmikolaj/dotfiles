@@ -11,7 +11,7 @@
 
 # variables
 set $browser qutebrowser
-set $terminal alacritty --config-file $HOME/.config/alacritty/alacritty-wayland.yml
+set $terminal alacritty --config-file $HOME/.config/alacritty/alacritty-wayland.toml
 set $editor vim
 set $xeditor gvim
 set $home /home/kuba
@@ -39,7 +39,7 @@ set $right semicolon
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+c exec $terminal
+bindsym $mod+t exec $terminal
 
 # kill focused window
 bindsym Mod1+F4 kill
@@ -94,7 +94,7 @@ bindsym Mod4+Tab exec --no-startup-id i3-alt-tab n a
 bindsym $mod+h split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+g split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -118,6 +118,10 @@ bindsym $mod+bracketleft focus child
 
 # move the currently focused window to the scratchpad
 bindsym $mod+Shift+minus move scratchpad
+
+# universal copy-paste (Win+C/Win+V)
+bindsym Mod4+c exec --no-startup-id wtype -M ctrl -k Insert -m ctrl
+bindsym Mod4+v exec --no-startup-id wtype -M shift -k Insert -m shift
 
 # bind Hyper+V button to MMB - to paste primary from keyboard
 bindsym Mod3+v seat * cursor move 0 0; seat * cursor press button2; seat * cursor release button2
