@@ -27,11 +27,6 @@ key = "Insert"
 mods = "Shift"
 
 [[keyboard.bindings]]
-action = "Paste"
-key = 82
-mods = "Shift"
-
-[[keyboard.bindings]]
 chars = "\u001B[2~"
 key = 82
 
