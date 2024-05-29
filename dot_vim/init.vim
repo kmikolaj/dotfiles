@@ -3,6 +3,8 @@
 set nocompatible
 " set filetype off (for Vundle)
 filetype off
+" normal colors
+set notermguicolors
 
 if has("unix")
 	set rtp+=~/.vim/bundle/Vundle.vim
@@ -23,7 +25,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
-Plugin 'dense-analysis/ale'
+"Plugin 'dense-analysis/ale'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'majutsushi/tagbar'
@@ -210,7 +212,7 @@ let g:airline_symbols.whitespace = 'Ξ' " Envy Code R fix
 
 " Gvim {{{
 if has("gui_running")
-	colorscheme solarized
+	colorscheme NeoSolarized
 	set guiheadroom=0
 	" Maximalize screen space, looks stupid but works
 	set guioptions+=LlRrbTm
@@ -252,10 +254,10 @@ else
 		"autocmd FileType qf setlocal statusline=\ %n\ \ %f%=%l\ of\ %L\
 		"autocmd FileType help setlocal statusline=Help:\ %f%=%c,%l/%L\ %P
 		"autocmd FileType fuf setlocal statusline=%=Fuzzyfinder
-		colorscheme robokai
+		colorscheme NeoSolarized
 	else
 		set t_Co=256
-		colorscheme solarized
+		colorscheme NeoSolarized
 	endif
 endif
 " }}}
@@ -323,8 +325,7 @@ let g:NERDCustomDelimiters = {
 let ctrlp_cmd = 'CtrlPTag'
 let ctrlp_python = '--language-force=python --python-kinds=-vi --exclude=build --exclude=dist'
 let g:ctrlp_clear_cache_on_exit = 1 " cross-session cache
-"let g:ctrlp_user_command = 'find %s -type f \( ! -path "*/vendor/*" ! -path "*.git/*" ! -path "*/.*" ! -path "*/tmp/*" ! -name "*.so" ! -name "*.swp" ! -name "*.zip" ! -name "*.png" ! -name "*.jpg" ! -path "*/b/*" \)'
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+let g:ctrlp_user_command = 'rg -g "" --color=never --ignore-vcs --hidden --files %s'
 let g:ctrlp_root_markers = ['Gemfile'] " stop searching upwards for Rails
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
