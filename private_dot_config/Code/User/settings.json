@@ -10,6 +10,7 @@
 	"editor.renderWhitespace": "boundary",
 	"editor.minimap.enabled": false,
 	"editor.minimap.renderCharacters": false,
+	"editor.stickyScroll.enabled": false,
 	"workbench.editor.showTabs": "single",
 	"workbench.editor.enablePreviewFromQuickOpen": false,
 	"workbench.enableExperiments": false,
