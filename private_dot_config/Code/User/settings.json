@@ -74,8 +74,17 @@
 		"default": "right",
 		"jupyter-notebook": "left"
 	},
-	"[json]": {
-		"editor.defaultFormatter": "Glavin001.unibeautify-vscode"
+	"[html]": {
+		"editor.defaultFormatter": "vscode.html-language-features"
+	},
+	"[javascript][javascriptreact][typescript]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	},
+	"[json][jsonc]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"[css][scss][less]": {
+		"editor.defaultFormatter": "vscode.css-language-features"
 	},
 	"workbench.colorTheme": "Solarized Light+",
 	"git.defaultBranchName": "master",
@@ -95,5 +104,21 @@
 	"terminal.integrated.fontSize": 12,
 	"zenMode.fullScreen": false,
 	"dev.containers.dockerPath": "podman",
-	"dev.containers.dockerComposePath": "podman-compose"
+	"dev.containers.dockerComposePath": "podman-compose",
+	"git.openRepositoryInParentFolders": "always",
+	"spellright.languageContext": {
+		"asciidoc": {
+			"body": [ "pl" ],
+			"comments": [ "pl" ]
+		}
+	},
+	"spellright.language": [
+		"pl_PL"
+	],
+	"spellright.documentTypes": [
+		"markdown",
+		"latex",
+		"plaintext",
+		"asciidoc"
+	]
 }
