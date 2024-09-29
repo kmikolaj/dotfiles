@@ -210,6 +210,10 @@ endif
 let g:airline_symbols.whitespace = 'Ξ' " Envy Code R fix
 " }}}
 
+" NeoSolarized {{{ 
+let g:neosolarized_diffmode = "high"
+" }}}
+
 " Gvim {{{
 if has("gui_running")
 	colorscheme NeoSolarized
@@ -437,6 +441,7 @@ au BufNewFile,BufRead *.adoc setf asciidoc
 
 " Diff
 au VimEnter * if &diff | execute 'windo set wrap' | endif
+if &diff | syntax off | endif
 "}}}
 
 " Templates {{{

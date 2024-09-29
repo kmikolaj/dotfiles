@@ -121,11 +121,13 @@ let g:neosolarized_vertSplitBgTrans = get(g:, "neosolarized_vertSplitBgTrans", 1
 
 " Colorscheme initialization "{{{
 " ---------------------------------------------------------------------
-hi clear
+"hi clear
+source $VIMRUNTIME/colors/vim.lua " Nvim: revert to Vim default color scheme
+
 if exists("syntax_on")
   syntax reset
 endif
-let colors_name = "NeoSolarized"
+let g:colors_name = "NeoSolarized"
 
 "}}}
 
@@ -535,6 +537,7 @@ hi! link vimUserFunc Function
 hi! link helpSpecial Special
 hi! link vimSet Normal
 hi! link vimSetEqual Normal
+hi! link String Constant
 exe "hi! vimCommentString"  .s:fmt_none    .s:fg_violet .s:bg_none
 exe "hi! vimCommand"        .s:fmt_none    .s:fg_yellow .s:bg_none
 exe "hi! vimCmdSep"         .s:fmt_bold    .s:fg_blue   .s:bg_none
