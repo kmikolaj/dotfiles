@@ -1,5 +1,3 @@
-import = ["/home/kuba/.config/alacritty/themes/themes/solarized_dark.toml"]
-
 [bell]
 animation = "EaseOutExpo"
 color = "#ffffff"
@@ -36,3 +34,6 @@ multiplier = 3
 
 [selection]
 save_to_clipboard = true
+
+[general]
+import = ["/home/kuba/.config/alacritty/themes/themes/solarized_dark.toml"]
