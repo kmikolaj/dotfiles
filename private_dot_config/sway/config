@@ -330,6 +330,10 @@ for_window [app_id="Frame"] floating enable
 # repair some applications
 for_window [app_id="firefox" title="Open Firefox in Troubleshoot Mode?"] floating enable
 
+# fullscreen is not idling
+for_window [class=".*"] inhibit_idle fullscreen
+for_window [app_id=".*"] inhibit_idle fullscreen
+
 # import gtk-theme
 exec_always import-gsettings \
     font-name:gtk-font-name \
@@ -350,7 +354,7 @@ exec swayidle -w \
         swaymsg "output * dpms on"'
 
 # clipboard
-exec wl-paste -t text --watch clipman store --max-items=80 --unix
+exec wl-paste -n -t text --watch clipman store --max-items=80 --unix
 
 # wlsunset (redshift clone)
 exec wlsunset -t 3600 -T 6500 -l 50.06 -L 19.94 -g 0.9
