@@ -441,6 +441,7 @@ au BufNewFile,BufRead *.adoc setf asciidoc
 
 " Diff
 au VimEnter * if &diff | execute 'windo set wrap' | endif
+au VimResized * if &diff | wincmd = | endif
 if &diff | syntax off | endif
 "}}}
 
