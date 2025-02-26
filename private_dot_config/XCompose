@@ -1,4 +1,4 @@
-# get default seqeuences
+# get default sequences from: /usr/share/X11/locale/en_US.UTF-8/Compose
 include "%L"
 
 # greek alphabet
@@ -83,7 +83,6 @@ include "%L"
 <Multi_key> <d> <f> : "℉" U2109
 <Multi_key> <d> <k> : "K" U212A
 <Multi_key> <space> <space> : "␣" U2423
-<Multi_key> <period> <period> : "·" U00B7
 <Multi_key> <1> <period> : "․" U2024
 <Multi_key> <2> <period> : "‥" U2025
 <Multi_key> <3> <period> : "…" U2026
