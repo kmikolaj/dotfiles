@@ -11,6 +11,7 @@
 	"editor.minimap.enabled": false,
 	"editor.minimap.renderCharacters": false,
 	"editor.stickyScroll.enabled": false,
+	"editor.inlayHints.enabled": "offUnlessPressed",
 	"workbench.editor.showTabs": "single",
 	"workbench.editor.enablePreviewFromQuickOpen": false,
 	"workbench.enableExperiments": false,
@@ -120,5 +121,9 @@
 		"latex",
 		"plaintext",
 		"asciidoc"
-	]
+	],
+	"clangd.arguments": [
+		"--enable-config"
+	],
+	"makefile.configureOnOpen": true
 }
