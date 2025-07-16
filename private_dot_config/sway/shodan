@@ -1,0 +1,8 @@
+# outputs
+output LVDS-1 {
+    position 1680 0
+    resolution 1366x768@60Hz
+}
+
+# vim:set ts=4 sw=4 et:
+

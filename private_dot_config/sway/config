@@ -9,6 +9,8 @@
 # layout, use the i3-config-wizard
 #
 
+include /etc/sway/config.d/*
+
 # variables
 set $browser qutebrowser
 set $terminal alacritty --config-file $HOME/.config/alacritty/alacritty-wayland.toml
@@ -120,6 +122,8 @@ bindsym $mod+bracketleft focus child
 bindsym $mod+Shift+minus move scratchpad
 
 # universal copy-paste (Win+C/Win+V)
+#bindsym Mod4+c exec --no-startup-id wtype -k XF86Copy
+#bindsym Mod4+v exec --no-startup-id wtype -k XF86Paste
 bindsym Mod4+c exec --no-startup-id wtype -M ctrl -k Insert -m ctrl
 bindsym Mod4+v exec --no-startup-id wtype -M shift -k Insert -m shift
 
@@ -251,10 +255,7 @@ titlebar_padding 2
 mouse_warping output
 
 # outputs
-output LVDS-1 {
-    position 1680 0
-    resolution 1366x768@60Hz
-}
+include "$(cat /etc/hostname)"
 
 output HDMI-A-1 {
     position 0 0
