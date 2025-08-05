@@ -13,21 +13,13 @@ alert = 10.0
 warning = 20.0
 
 [[block]]
-block = "disk_space"
-path = "/home"
-info_type = "free"
-format = " $icon $available"
-alert = 10.0
-warning = 20.0
-
-[[block]]
 block = "cpu"
 interval = 1
-format = " $icon $barchart $utilization $frequency"
+format = " $icon $utilization $frequency"
 
 [[block]]
 block = "memory"
-format = " $icon $mem_used"
+format = " $icon  $mem_used"
 interval = 10
 warning_mem = 80
 critical_mem = 95
@@ -43,7 +35,7 @@ good = 35
 idle = 45
 info = 60
 warning = 80
-chip = "coretemp-isa-*"
+chip = "acpitz-acpi-0"
 
 [[block]]
 block = "net"
@@ -84,8 +76,13 @@ headphones_indicator = true
 [block.mappings]
 #"alsa_output.pci-0000_00_1b.0.analog-stereo" = "🎧"
 "alsa_output.pci-0000_00_1b.0.analog-stereo" = "💻"
-"alsa_output.pci-0000_00_1b.0.3.analog-stereo" = "💻"
-"alsa_output.pci-0000_00_1b.0.5.analog-stereo" = "💻" 
+#"alsa_output.pci-0000_00_1b.0.*.analog-stereo" = "💻"
+#"alsa_output.pci-0000_00_1b.0.5.analog-stereo" = "💻" 
+#"alsa_output.pci-0000_00_*_00.6.analog-stereo" = "💻" 
+
+"alsa_output.pci-0000_c3_00.6.analog-stereo" = "<x"
+"alsa_input.pci-0000_c3_00.6.analog-stereo" = ">x"
+
 "bluez_output.28_F5_37_88_3C_02.a2dp-sink" = ""
 "bluez_output.28_F5_37_88_3C_02.1" = ""
 #"bluez_output.28_F5_37_88_3C_02.headset-head-unit" = "1 "
@@ -97,17 +94,15 @@ headphones_indicator = true
 "bluez_output.80_99_E7_4D_52_DD.1" = ""
 #"bluez_output.80_99_E7_4D_52_DD.headset-head-unit" = "1 "
 
-#[[block]]
-#block = "sound"
-#driver = "auto"
-#device_kind = "source"
-#format = " $icon { $volume|}"
-#show_volume_when_muted = false
-#headphones_indicator = false
+[[block]]
+block = "sound"
+driver = "auto"
+device_kind = "source"
+format = " $icon { $volume|}"
 
-#[block.mappings]
-#"alsa_input.pci-0000_00_1b.0.analog-stereo" = "󱡬"
-#"rnnoise_source" = "󰍮"
+[block.mappings]
+"alsa_input.pci-0000_00_1b.0.analog-stereo" = "󱡬"
+"alsa_input.pci-0000_c3_00.6.analog-stereo" = "󱡬"
 
 [[block]]
 block = "battery"
@@ -121,7 +116,7 @@ empty_threshold = 5
 
 [[block]]
 block = "weather"
-format = " $icon $location {$temp}C"
+format = " {$icon} $location {$temp}C"
 service = { name = "openweathermap", city_id = "764849", units = "metric" }
 autolocate = false
 interval = 3600
