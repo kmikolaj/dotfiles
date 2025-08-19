@@ -12,6 +12,7 @@
 	"editor.minimap.renderCharacters": false,
 	"editor.stickyScroll.enabled": false,
 	"editor.inlayHints.enabled": "offUnlessPressed",
+	"editor.formatOnSave": false,
 	"workbench.editor.showTabs": "single",
 	"workbench.editor.enablePreviewFromQuickOpen": false,
 	"workbench.enableExperiments": false,
