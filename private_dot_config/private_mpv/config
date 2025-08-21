@@ -79,6 +79,10 @@ screenshot-directory=~/.cache/mpv/screenshots
 # Per-file config
 use-filedir-conf=yes
 
+[norm]
+profile-desc="Normalize audio volume"
+af=lavfi=[loudnorm=I=-16:TP=-3:LRA=4]
+
 [streaming]
 profile-desc=cond:(is_remote_filesystem(get('path')))
 #profile-cond=demuxer_via_network
