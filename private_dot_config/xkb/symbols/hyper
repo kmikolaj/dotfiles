@@ -1,0 +1,16 @@
+hidden partial modifier_keys
+xkb_symbols "caps" {
+	key <CAPS> { [ Hyper_L ] };
+	modifier_map Mod4 { <SUPR> };
+	modifier_map Mod3 { <HYPR>, <CAPS> };
+};
+
+hidden partial modifier_keys
+xkb_symbols "shifted_caps" {
+	key <CAPS> {
+		type[Group1] = "TWO_LEVEL",
+		symbols[Group1] = [ Hyper_L, Caps_Lock ],
+		actions[Group1] = [ SetMods(modifiers=Hyper), LockMods(modifiers = Lock) ]
+	};
+	modifier_map Mod3 { <HYPR> };
+};

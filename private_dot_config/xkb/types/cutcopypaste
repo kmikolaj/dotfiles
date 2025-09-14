@@ -1,0 +1,40 @@
+default partial xkb_types "addsuper" {
+	type "FOUR_LEVEL_ALPHABETIC_SUPER" {
+		modifiers= Shift+Lock+LevelThree+Mod4;
+		map[Shift]= Level2;
+		map[Lock]= Level2;
+		map[LevelThree]= Level3;
+		map[Shift+LevelThree]= Level4;
+		map[Lock+LevelThree]= Level4;
+		map[Shift+Lock+LevelThree]= Level3;
+		map[Mod4]= Level5;
+		map[Shift+Mod4]= Level5;
+		map[LevelThree+Mod4]= Level5;
+		map[Shift+LevelThree+Mod4]= Level5;
+		level_name[Level1]= "Base";
+		level_name[Level2]= "Shift";
+		level_name[Level3]= "AltGr";
+		level_name[Level4]= "Shift AltGr";
+		level_name[Level5]= "With Super";
+	};
+	type "FOUR_LEVEL_SEMIALPHABETIC_SUPER" {
+		modifiers= Shift+Lock+LevelThree+Mod4;
+		map[Shift]= Level2;
+		map[Lock]= Level2;
+		map[LevelThree]= Level3;
+		map[Shift+LevelThree]= Level4;
+		map[Lock+LevelThree]= Level3;
+		preserve[Lock+LevelThree]= Lock;
+		map[Shift+Lock+LevelThree]= Level4;
+		preserve[Shift+Lock+LevelThree]= Lock;
+		map[Mod4]= Level5;
+		map[Shift+Mod4]= Level5;
+		map[LevelThree+Mod4]= Level5;
+		map[Shift+LevelThree+Mod4]= Level5;
+		level_name[Level1]= "Base";
+		level_name[Level2]= "Shift";
+		level_name[Level3]= "AltGr";
+		level_name[Level4]= "Shift AltGr";
+		level_name[Level5]= "With Super";
+	};
+};
