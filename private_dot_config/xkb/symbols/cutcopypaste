@@ -1,17 +1,17 @@
 default partial xkb_symbols "superversions" {
 	replace key <AB02> { 
 		type[Group1]= "FOUR_LEVEL_ALPHABETIC_SUPER",
-		symbols[Group1]= [x,X,zacute,Zacute,NoSymbol],
-		actions[Group1]= [NoAction(),NoAction(),NoAction(),NoAction(),RedirectKey(key=<AB02>,mods=Shift+Control,clearmods=Super)]
+		symbols[Group1]= [x,X,zacute,Zacute,XF86Cut],
+		actions[Group1]= [NoAction(),NoAction(),NoAction(),NoAction(),NoAction()]
 	};
 	replace key <AB03> { 
 		type[Group1]= "FOUR_LEVEL_ALPHABETIC_SUPER",
-		symbols[Group1]= [c,C,cacute,Cacute,NoSymbol],
-		actions[Group1]= [NoAction(),NoAction(),NoAction(),NoAction(),RedirectKey(key=<AB03>,mods=Shift+Control,clearmods=Super)]
+		symbols[Group1]= [c,C,cacute,Cacute,XF86Copy],
+		actions[Group1]= [NoAction(),NoAction(),NoAction(),NoAction(),NoAction()]
 	};
 	replace key <AB04> { 
 		type[Group1]= "FOUR_LEVEL_SEMIALPHABETIC_SUPER",
-		symbols[Group1]= [v,V,doublelowquotemark,leftsinglequotemark,NoSymbol],
-		actions[Group1]= [NoAction(),NoAction(),NoAction(),NoAction(),RedirectKey(key=<AB04>,mods=Shift+Control,clearmods=Super)]
+		symbols[Group1]= [v,V,doublelowquotemark,leftsinglequotemark,XF86Paste],
+		actions[Group1]= [NoAction(),NoAction(),NoAction(),NoAction(),NoAction()]
 	};
 };
