@@ -19,14 +19,13 @@ family = "IosevkaTerm NFM"
 [font.normal]
 family = "IosevkaTerm NFM"
 
-[[keyboard.bindings]]
-action = "Paste"
-key = "Insert"
-mods = "Shift"
-
-[[keyboard.bindings]]
-chars = "\u001B[2~"
-key = 82
+[keyboard]
+bindings = [
+  { action = "Copy", key = "Copy", mods = "Super" },
+  { action = "Paste", key = "Paste", mods = "Super" },
+  { action = "Paste", key = "Insert", mods = "Shift" },
+  { key = 82, chars = "\u001B[2~" },
+]
 
 [scrolling]
 history = 10000
