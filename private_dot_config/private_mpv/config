@@ -81,7 +81,6 @@ use-filedir-conf=yes
 
 [norm]
 profile-desc="Normalize audio volume"
-#af=lavfi=[loudnorm=I=-16:TP=-3:LRA=4]
 af=lavfi=[dynaudnorm=p=0.9:m=15:s=9:g=15]
 
 [streaming]
