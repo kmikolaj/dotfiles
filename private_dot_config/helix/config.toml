@@ -2,6 +2,7 @@ theme = "solarized_dark"
 
 [editor]
 cursorline = true
+default-yank-register = "+"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -9,3 +10,4 @@ normal = "block"
 
 [keys.normal]
 "ins" = "insert_mode"
+"#" = "toggle_comments"
