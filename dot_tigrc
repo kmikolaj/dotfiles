@@ -223,8 +223,8 @@ bind main W !git rebase -Xignore-all-space -i %(commit)^
 bind main P !git cherry-pick %(commit)
 bind main X !?git push
 bind main F !@sh -c "git show %(commit) --pretty=format: --name-only | xargs | xsel -ib"
-bind main G !<sh -c "vim -c 'Gedit %(commit)' $(ls | head -1)"
-bind main V !<sh -c "vim $(git show %(commit) --pretty=format: --name-only | xargs)"
+bind main G !<sh -c "$EDITOR -c 'Gedit %(commit)' $(ls | head -1)"
+bind main V !<sh -c "$EDITOR $(git show %(commit) --pretty=format: --name-only | xargs)"
 bind main e !@git format-patch -1 -p %(commit)
 bind main E !@sh -c "git-export-patch %(commit)"
 bind main . !>sh -c 'tig show $1:$2' -- %(commit) %(fileargs)
@@ -242,12 +242,12 @@ bind diff A !git add %(file)              # Add current file
 bind diff C !git commit -av               # Add and commit
 bind diff P !git add -p %(file)           # Partially add current file
 bind diff F !@sh -c "git show %(commit) --pretty=format: --name-only | xargs | xsel -ib"
-bind diff E !<sh -c "vim -c 'Gedit %(commit)' $(ls | head -1)"
-bind diff V !<sh -c "vim $(git show %(commit) --pretty=format: --name-only | xargs)"
+bind diff E !<sh -c "$EDITOR -c 'Gedit %(commit)' $(ls | head -1)"
+bind diff V !<sh -c "$EDITOR $(git show %(commit) --pretty=format: --name-only | xargs)"
 
 # Tree
 
-bind tree V !vim %(file)
+bind tree V !<sh -c "$EDITOR %(file)"
 
 # Branch
 
