@@ -1,0 +1,9 @@
+keybinds clear-defaults=false {
+    locked {
+        bind "Ctrl q" { SwitchToMode "normal"; }
+    }
+    shared_except "locked" {
+        bind "Ctrl q" { SwitchToMode "Locked"; }
+        bind "Ctrl d" { Quit; }
+    }
+}
