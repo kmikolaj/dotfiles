@@ -1,0 +1,121 @@
+{
+  "model": "sonnet",
+  "enabledPlugins": {
+    "clangd-lsp@claude-plugins-official": true
+  },
+  "skipDangerousModePermissionPrompt": true,
+  "permissions": {
+    "allowedTools": [
+      "Read",
+      "Glob",
+      "Grep",
+      "LS", 
+      "WebFetch",    
+      "TodoRead",   
+      "TodoWrite", 
+      "Write",    
+      "Edit",    
+      "MultiEdit", 
+
+      "Bash(git log:*)",
+      "Bash(git diff:*)",
+      "Bash(git status:*)",
+      "Bash(git show:*)",
+      "Bash(git blame:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git checkout:*)",
+      "Bash(git branch:*)",
+      "Bash(git stash:*)",
+      "Bash(git fetch:*)",
+      "Bash(git pull:*)",
+      "Bash(git push:*)",
+
+      "Bash(make:*)",
+      "Bash(cmake:*)",
+      "Bash(qmake:*)",
+      "Bash(ninja:*)",
+
+      "Bash(g++:*)",
+      "Bash(gcc:*)",
+      "Bash(clang++:*)",
+      "Bash(clang:*)",
+      "Bash(objdump:*)",
+      "Bash(nm:*)",
+      "Bash(ldd:*)",
+      "Bash(readelf:*)",
+
+      "Bash(moc:*)",
+      "Bash(uic:*)",
+      "Bash(rcc:*)",
+      "Bash(qdbusxml2cpp:*)",
+
+      "Bash(ls:*)",
+      "Bash(find:*)",
+      "Bash(cat:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(grep:*)",
+      "Bash(file:*)",
+      "Bash(stat:*)",
+      "Bash(du:*)",
+      "Bash(df:*)",
+      "Bash(wc:*)",
+
+      "Bash(udevadm:*)",
+      "Bash(lsblk:*)",
+      "Bash(lspci:*)",
+      "Bash(lsusb:*)",
+      "Bash(dmesg:*)",
+      "Bash(journalctl:*)",
+      "Bash(systemctl status:*)",
+
+      "Bash(dpkg:*)",
+      "Bash(dpkg-query:*)",
+      "Bash(apt-cache:*)",
+      "Bash(pkg-config:*)",
+
+      "Bash(ssh:*)",
+      "Bash(scp:*)",
+      "Bash(rsync:*)",
+      "Bash(gdb:*)",
+      "Bash(valgrind:*)",
+      "Bash(strace:*)",
+      "Bash(ltrace:*)",
+      "Bash(openssl:*)",
+      "Bash(python3:*)",
+      "Bash(python:*)"
+    ],
+
+    "deny": [
+      "Bash(rm:*)",
+      "Bash(rmdir:*)",
+      "Bash(mv:*)",
+      "Bash(dd:*)",
+      "Bash(mkfs:*)",
+      "Bash(fdisk:*)",
+
+      "Bash(sudo:*)",
+      "Bash(su:*)",
+      "Bash(chmod:*)",
+      "Bash(chown:*)",
+
+      "Bash(apt-get:*)",
+      "Bash(apt:*)",
+      "Bash(snap:*)",
+      "Bash(pip install:*)",
+
+      "Bash(iptables:*)",
+      "Bash(ip link:*)",
+      "Bash(ifconfig:*)",
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+
+      "Read(.env)",
+      "Read(.env.*)",
+      "Read(*secrets*)",
+      "Read(*password*)",
+      "Read(*private_key*)"
+    ]
+  }
+}
