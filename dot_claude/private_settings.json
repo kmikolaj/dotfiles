@@ -3,6 +3,11 @@
   "enabledPlugins": {
     "clangd-lsp@claude-plugins-official": true
   },
+  "syntaxHighlightingDisabled": false,
+  "statusLine": {
+    "type": "command",
+    "command": "python3 ~/.claude/statusline.py"
+  },
   "skipDangerousModePermissionPrompt": true,
   "permissions": {
     "allowedTools": [

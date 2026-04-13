@@ -1,7 +1,0 @@
-{
-  "syntaxHighlightingDisabled": false,
-  "statusLine": {
-    "type": "command",
-    "command": "python3 ~/.claude/statusline.py"
-  }
-}
