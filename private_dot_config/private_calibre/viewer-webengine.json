@@ -1,0 +1,42 @@
+{
+  "local_storage": {
+    "simple_input_history_net_search_url": [
+      "https://google.com/search?q={q}"
+    ]
+  },
+  "old_prefs_migrated": true,
+  "session_data": {
+    "controls_footer": {
+      "left": "empty",
+      "middle": "empty",
+      "right": "progress"
+    },
+    "controls_help_shown_count": 2,
+    "current_color_scheme": "system",
+    "footer": {
+      "left": "menu-icon-on-hover",
+      "middle": "empty",
+      "right": "progress"
+    },
+    "header": {
+      "left": "empty",
+      "middle": "empty",
+      "right": "menu-icon-on-hover"
+    },
+    "keyboard_shortcuts": {},
+    "left-margin": {
+      "left": "empty",
+      "middle": "empty",
+      "right": "empty"
+    },
+    "right-margin": {
+      "left": "empty",
+      "middle": "empty",
+      "right": "empty"
+    },
+    "standalone_font_settings": {},
+    "standalone_misc_settings": {
+      "save_annotations_in_ebook": false
+    }
+  }
+}
