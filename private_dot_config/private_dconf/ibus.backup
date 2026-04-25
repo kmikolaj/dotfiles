@@ -1,0 +1,10 @@
+[general]
+engines-order=['xkb:pl::pol']
+preload-engines=['xkb:pl::pol']
+use-system-keyboard-layout=true
+
+[panel]
+show-icon-on-systray=false
+
+[panel/emoji]
+hotkey=@as []
