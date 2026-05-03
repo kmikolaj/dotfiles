@@ -4,5 +4,35 @@ output LVDS-1 {
     resolution 1366x768@60Hz
 }
 
+output HDMI-A-1 {
+    position 0 0
+    #resolution 1920x1200@60Hz
+    resolution 1680x1050@60Hz
+}
+
+# if both screen connected external is primary
+workspace 1 output HDMI-A-1 LVDS-1
+
+# focus external screen
+focus output HDMI-A-1
+# focus laptop screen if connected
+focus output LVDS-1
+
+# toggle internal output on lid open/close
+bindswitch --locked lid:off output LVDS-1 enable
+bindswitch --locked lid:on output LVDS-1 disable
+
+# touchpad
+bindsym XF86TouchpadToggle input "2:14:ETPS/2_Elantech_Touchpad" events toggle
+
+# brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q -c backlight -n100 set 5%+
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -q -c backlight -n100 set 5%-
+
+# audio
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer --sink 0 -i 5
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer --sink 0 -d 5
+bindsym XF86AudioMute exec --no-startup-id pamixer --sink 0 -t
+
 # vim:set ts=4 sw=4 et:
 

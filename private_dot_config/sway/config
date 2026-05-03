@@ -14,10 +14,8 @@ include /etc/sway/config.d/*
 # variables
 set $browser qutebrowser
 set $terminal alacritty --config-file $HOME/.config/alacritty/alacritty-wayland.toml
-set $editor vim
-set $xeditor gvim
+set $editor nvim
 set $home /home/kuba
-set $player liskin-media
 
 # default modkey
 set $mod Mod4
@@ -50,8 +48,7 @@ bindsym Mod1+F4 kill
 bindsym Mod1+F2 exec rofi -m -4 -show run
 
 # clipboard menu
-bindsym Ctrl+Mod1+H exec clipman pick --tool=CUSTOM --tool-args="rofi -m -4 -p clipboard -dmenu"
-#bindsym Ctrl+Mod1+H exec copyq toggle
+bindsym Ctrl+Mod1+H exec cliphist list | rofi -m -4 -p clipboard -dmenu | cliphist decode | wl-copy
 
 # locate menu
 bindsym Mod1+F1 exec xdg-open "$(plocate -i $home | rofi -m -4 -threads 0 -width 80 -dmenu -i -p locate)"
@@ -121,14 +118,8 @@ bindsym $mod+bracketleft focus child
 # move the currently focused window to the scratchpad
 bindsym $mod+Shift+minus move scratchpad
 
-# universal copy-paste (Win+C/Win+V)
-#bindsym Mod4+c exec --no-startup-id wtype -k XF86Copy
-#bindsym Mod4+v exec --no-startup-id wtype -k XF86Paste
-bindsym Mod4+c exec --no-startup-id wtype -M ctrl -k Insert -m ctrl
-bindsym Mod4+v exec --no-startup-id wtype -M shift -k Insert -m shift
-
-# bind Hyper+V button to MMB - to paste primary from keyboard
-bindsym Mod3+v seat * cursor move 0 0; seat * cursor press button2; seat * cursor release button2
+# universal copy-paste (Super+C/Super+V)
+# todo
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
@@ -189,23 +180,12 @@ bindsym $mod+Shift+h exec --no-startup-id bt-profile-toggle
 # screenshot
 bindsym Print exec --no-startup-id grim $(xdg-user-dir SCREENSHOTS)/$(date +'%s_shot.png')
 
-# multimedia keys
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q -c backlight -n100 set 5%+
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -q -c backlight -n100 set 5%-
-
-# pulse audio control
-bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer --sink 0 -i 5
-bindsym XF86AudioLowerVolume exec --no-startup-id pamixer --sink 0 -d 5
-bindsym XF86AudioMute exec --no-startup-id pamixer --sink 0 -t
-
 # mpris play/pause
-bindsym XF86AudioPlay exec --no-startup-id $player play-pause
-bindsym XF86AudioStop exec --no-startup-id $player stop
-bindsym XF86AudioPrev exec --no-startup-id $player previous
-bindsym XF86AudioNext exec --no-startup-id $player next
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioStop exec --no-startup-id playerctl stop
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+bindsym XF86AudioNext exec --no-startup-id playerctl next
 
-# touchpad
-bindsym XF86TouchpadToggle input "2:14:ETPS/2_Elantech_Touchpad" events toggle
 
 # python interpreter
 bindsym XF86Calculator exec $terminal -e python
@@ -257,16 +237,6 @@ mouse_warping output
 # outputs
 include "$(cat /etc/hostname)"
 
-output HDMI-A-1 {
-    position 0 0
-    #resolution 1920x1200@60Hz
-    resolution 1680x1050@60Hz
-}
-
-# toggle internal output on lid open/close
-bindswitch --locked lid:off output LVDS-1 enable
-bindswitch --locked lid:on output LVDS-1 disable
-
 # Allow switching between workspaces with left and right swipes
 bindgesture swipe:right workspace next
 bindgesture swipe:left workspace prev
@@ -293,8 +263,9 @@ input type:pointer {
 # keyboard with customized keymap layout: CapsLock -> Hyper, Shift + CapsLock -> CapsLock
 input * xkb_file $home/.xkb/keymap/default
 
-# make sure numlock is disabled on start
+# make sure numlock and capslock are disabled on start
 input * xkb_numlock disable
+input * xkb_capslock disable
 
 seat seat0 {
     fallback true
@@ -304,16 +275,8 @@ seat seat0 {
     idle_inhibit keyboard pointer touch switch
 }
 
-# if both screen connected external is primary
-workspace 1 output HDMI-A-1 LVDS-1
-
-# focus external screen
-focus output HDMI-A-1
-# focus laptop screen if connected
-focus output LVDS-1
-
 # pure wayland
-xwayland enable
+xwayland disable
 
 # open file dialog window
 for_window [window_type="dialog" window_role="GtkFileChooserDialog"] resize set 80 ppt 92 ppt, move position center
@@ -343,7 +306,11 @@ exec_always import-gsettings \
     cursor-theme:gtk-cursor-theme-name
 
 # autostart
-exec dropbox
+# ibus
+exec_always ibus start --type wayland
+
+# easyeffects
+exec easyeffects --service-mode --hide-window
 
 # dimming
 exec swayidle -w \
@@ -355,10 +322,10 @@ exec swayidle -w \
         swaymsg "output * dpms on"'
 
 # clipboard
-exec wl-paste -n -t text --watch clipman store --max-items=80 --unix
+exec wl-paste -n -t text --watch cliphist store --max-items=80 --unix
 
 # wlsunset (redshift clone)
-exec wlsunset -t 3600 -T 6500 -l 50.06 -L 19.94 -g 0.9
+exec wlsunset -t 3600 -T 6500 -l 50.06 -L 19.94
 
 # notification daemon
 exec mako
