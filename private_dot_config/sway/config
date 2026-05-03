@@ -48,6 +48,7 @@ bindsym Mod1+F4 kill
 bindsym Mod1+F2 exec rofi -m -4 -show run
 
 # clipboard menu
+#bindsym Ctrl+Mod1+H exec clipman pick --tool=CUSTOM --tool-args="rofi -m -4 -p clipboard -dmenu"
 bindsym Ctrl+Mod1+H exec cliphist list | rofi -m -4 -p clipboard -dmenu | cliphist decode | wl-copy
 
 # locate menu
@@ -270,7 +271,7 @@ input type:pointer {
 
 # keyboard with customized keymap layout: CapsLock -> Hyper, Shift + CapsLock -> CapsLock
 #input * xkb_file $home/.config/xkb/keymap/default
-input * xkb_file $home/custom2.xkb
+input * xkb_file /home/kuba/old-laptop/backup-test/custom2.xkb
 
 # make sure numlock and capslock are disabled on start
 input * xkb_numlock disable
