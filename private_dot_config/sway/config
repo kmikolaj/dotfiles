@@ -119,7 +119,13 @@ bindsym $mod+bracketleft focus child
 bindsym $mod+Shift+minus move scratchpad
 
 # universal copy-paste (Super+C/Super+V)
-# todo
+#bindsym Mod4+c exec --no-startup-id wtype -k XF86Copy
+#bindsym Mod4+v exec --no-startup-id wtype -k XF86Paste
+#bindsym Mod4+c exec --no-startup-id wtype -M ctrl -k Insert -m ctrl
+#bindsym Mod4+v exec --no-startup-id wtype -M shift -k Insert -m shift
+
+# bind Hyper+V button to MMB - to paste primary from keyboard
+bindsym Mod3+v seat * cursor move 0 0; seat * cursor press button2; seat * cursor release button2
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
@@ -186,6 +192,8 @@ bindsym XF86AudioStop exec --no-startup-id playerctl stop
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 
+# switch display modes
+# bindsym XF86Display
 
 # python interpreter
 bindsym XF86Calculator exec $terminal -e python
@@ -261,7 +269,8 @@ input type:pointer {
 }
 
 # keyboard with customized keymap layout: CapsLock -> Hyper, Shift + CapsLock -> CapsLock
-input * xkb_file $home/.xkb/keymap/default
+#input * xkb_file $home/.config/xkb/keymap/default
+input * xkb_file $home/custom2.xkb
 
 # make sure numlock and capslock are disabled on start
 input * xkb_numlock disable
