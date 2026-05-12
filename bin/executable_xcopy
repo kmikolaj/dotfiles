@@ -1,0 +1,14 @@
+#!/bin/bash
+if [ ! -z $WAYLAND_DISPLAY ]; then
+	/usr/bin/wl-copy -n
+elif [ ! -z "$DISPLAY" ]; then
+	if [[ -p /proc/$$/fd/0 ]]; then
+		# trim multiple newlines
+		# sed -Ez '$ s/\n+$//' | tee >(/usr/bin/xsel -i -b) | /usr/bin/xsel -i -p
+		sed -z '$ s/\n$//' | tee >(/usr/bin/xsel -i -b) | /usr/bin/xsel -i -p
+	else
+		/usr/bin/xsel
+	fi
+fi
+
+exit 0

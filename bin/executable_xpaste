@@ -1,0 +1,13 @@
+#!/bin/bash
+# primary buffer universal paste 
+if [ ! -z $WAYLAND_DISPLAY ]; then
+	/usr/bin/wl-paste -p -t 'text/plain' -n
+elif [ ! -z $DISPLAY ]; then
+	if which xclip >/dev/null 2>&1; then
+		/usr/bin/xclip -selection primary -o 2> /dev/null | sed -z 's/\n//g'
+	elif which xsel >/dev/null 2>&1; then
+		/usr/bin/xsel -p -o | sed -z 's/\n//g'
+	fi
+fi
+
+exit 0

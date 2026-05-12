@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# ibus input method (Wayland)
+unset GTK_IM_MODULE
+unset QT_IM_MODULE
+export QT_IM_MODULES="wayland;ibus"
+export XMODIFIERS=@im=ibus
+
+#exec sway
+exec sway -d &> /tmp/sway-session.log
