@@ -58,7 +58,7 @@ bindsym Mod1+F1 exec xdg-open "$(plocate -i $home | rofi -m -4 -threads 0 -width
 bindsym Mod3+n exec $terminal -e ncmpcpp
 bindsym Mod3+t exec $terminal -e tremc
 bindsym Mod3+a exec $terminal -e aria2top
-bindsym Mod3+l exec $terminal -e lf
+bindsym Mod3+l exec $terminal -e yazi
 
 # change focus
 bindsym $mod+$left focus left
@@ -85,10 +85,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # alt-tab like cycle windows in workspace:
-bindsym Mod1+Tab exec --no-startup-id i3-alt-tab n
+bindsym Mod1+Tab exec --no-startup-id sway-alt-tab.sh n
 
 # super-tab like cycle all windows:
-bindsym Mod4+Tab exec --no-startup-id i3-alt-tab n a
+bindsym Mod4+Tab exec --no-startup-id sway-alt-tab.sh n a
 
 # split in horizontal orientation
 bindsym $mod+h split h
