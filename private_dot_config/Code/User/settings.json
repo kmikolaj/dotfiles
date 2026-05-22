@@ -94,6 +94,8 @@
 	"gitlens.showWhatsNewAfterUpgrades": false,
 	"gitlens.codeLens.enabled": false,
 	"gitlens.telemetry.enabled": false,
+	"gitlens.plusFeatures.enabled": false,
+	"gitlens.launchpad.indicator.enabled": false,
 	"Lua.telemetry.enable": false,
 	"C_Cpp.intelliSenseEngine": "disabled",
 	"rust-analyzer.check.command": "clippy",
