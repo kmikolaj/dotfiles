@@ -1,7 +1,6 @@
 hidden partial modifier_keys
 xkb_symbols "caps" {
 	key <CAPS> { [ Hyper_L ] };
-	modifier_map Mod4 { <SUPR> };
 	modifier_map Mod3 { <HYPR>, <CAPS> };
 };
 

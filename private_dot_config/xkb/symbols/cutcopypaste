@@ -1,4 +1,4 @@
-default partial xkb_symbols "superversions" {
+default partial xkb_symbols "cutcopypaste" {
 	replace key <AB02> { 
 		type[Group1]= "FOUR_LEVEL_ALPHABETIC_SUPER",
 		symbols[Group1]= [x,X,zacute,Zacute,NoSymbol],
