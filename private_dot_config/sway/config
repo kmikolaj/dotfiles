@@ -261,11 +261,11 @@ input type:pointer {
 }
 
 # keyboard with customized keymap layout: CapsLock -> Hyper, Shift + CapsLock -> CapsLock
-input * xkb_file $home/.config/xkb/keymap/default
-
-# make sure numlock and capslock are disabled on start
-input * xkb_numlock disable
-input * xkb_capslock disable
+input type:keyboard {
+    xkb_file $home/.config/xkb/keymap/default
+    xkb_numlock disable
+    xkb_capslock disable
+}
 
 seat seat0 {
     fallback true
