@@ -19,6 +19,12 @@ family = "IosevkaTerm NFM"
 [font.normal]
 family = "IosevkaTerm NFM"
 
+[keyboard]
+bindings = [
+    { key = "Copy", mods = "Super", action = "Copy" },
+    { key = "Paste", mods = "Super", action = "Paste" },
+]
+
 [scrolling]
 history = 10000
 multiplier = 3
