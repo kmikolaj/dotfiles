@@ -1,14 +1,17 @@
 default partial xkb_symbols "cutcopypaste" {
 	replace key <AB02> {
 		type[Group1]= "FOUR_LEVEL_ALPHABETIC_SUPER",
-		symbols[Group1]= [x,X,zacute,Zacute,XF86Cut]
+		symbols[Group1]= [x,X,zacute,Zacute,XF86Cut],
+		actions[Group1]= [NoAction(),NoAction(),NoAction(),NoAction(),RedirectKey(key=<CUT>,clearmods=Super)]
 	};
 	replace key <AB03> {
 		type[Group1]= "FOUR_LEVEL_ALPHABETIC_SUPER",
-		symbols[Group1]= [c,C,cacute,Cacute,XF86Copy]
+		symbols[Group1]= [c,C,cacute,Cacute,XF86Copy],
+		actions[Group1]= [NoAction(),NoAction(),NoAction(),NoAction(),RedirectKey(key=<COPY>,clearmods=Super)]
 	};
 	replace key <AB04> {
 		type[Group1]= "FOUR_LEVEL_SEMIALPHABETIC_SUPER",
-		symbols[Group1]= [v,V,doublelowquotemark,leftsinglequotemark,XF86Paste]
+		symbols[Group1]= [v,V,doublelowquotemark,leftsinglequotemark,XF86Paste],
+		actions[Group1]= [NoAction(),NoAction(),NoAction(),NoAction(),RedirectKey(key=<PAST>,clearmods=Super)]
 	};
 };
