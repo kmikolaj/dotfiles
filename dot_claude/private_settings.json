@@ -115,6 +115,7 @@
   "syntaxHighlightingDisabled": false,
   "skipDangerousModePermissionPrompt": false,
   "preferredNotifChannel": "terminal_bell",
+  "awaySummaryEnabled": false,
   "hooks": {
     "UserPromptSubmit": [
       {
