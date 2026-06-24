@@ -17,17 +17,30 @@ local function exec(process, force_exec)
 	end
 end
 
-function is_remote_filesystem(path)
+-- Returns one of: 'remote', 'local', 'unknown'
+function filesystem_location(path)
 	if path == nil then
-		return false
+		return 'unknown'
 	end
 
 	local is_url = string.match(path, '[a-z]*://[^ >,;]*') ~= nil
 	if is_url then
-		return false
+		return 'remote'
 	end
 
 	local result = exec({'stat', '-f', '-c', '%T', path})
+	if result.error or not result.stdout then
+		return 'unknown'
+	end
+
 	local fs = result.stdout:gsub("%s+", "")
-	return fs == "nfs"
+	if fs == "" then
+		return 'unknown'
+	end
+
+	local remote_fs = { nfs = true, cifs = true, smb2 = true, fuseblk = true }
+	if remote_fs[fs] then
+		return 'remote'
+	end
+	return 'local'
 end
