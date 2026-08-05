@@ -23,6 +23,8 @@ family = "IosevkaTerm NFM"
 bindings = [
     { key = "Copy", mods = "Super", action = "Copy" },
     { key = "Paste", mods = "Super", action = "Paste" },
+    # Shift+Enter sends the same escape sequence as Alt+Enter (ESC + CR)
+    { key = "Enter", mods = "Shift", chars = "\u001B\r" },
 ]
 
 [scrolling]
