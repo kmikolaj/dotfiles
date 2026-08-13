@@ -48,7 +48,7 @@ bindsym Mod1+F4 kill
 bindsym Mod1+F2 exec rofi -m -4 -show run
 
 # clipboard menu
-bindsym Ctrl+Mod1+H exec cliphist list | rofi -m -4 -p clipboard -dmenu | cliphist decode | wl-copy
+bindsym Ctrl+Mod1+H exec cliphist list | rofi -m -4 -p clipboard -dmenu | cliphist decode | wl-copy -n
 
 # locate menu
 bindsym Mod1+F1 exec xdg-open "$(plocate -i $home | rofi -m -4 -threads 0 -width 80 -dmenu -i -p locate)"
