@@ -103,7 +103,7 @@
       "Bash(python:*)"
     ]
   },
-  "model": "sonnet",
+  "model": "opus",
   "statusLine": {
     "type": "command",
     "command": "python3 ~/.claude/statusline.py"
@@ -116,31 +116,5 @@
   "skipDangerousModePermissionPrompt": false,
   "preferredNotifChannel": "terminal_bell",
   "awaySummaryEnabled": false,
-  "tui": "default",
-  "hooks": {
-    "UserPromptSubmit": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "date +%s > /tmp/claude_start",
-            "async": true
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "s=$(cat /tmp/claude_start 2>/dev/null || echo 0); e=$(($(date +%s)-s)); [ $e -gt 120 ] && notify-send 'Claude' 'Done'",
-            "async": true
-          }
-        ]
-      }
-    ]
-  }
+  "tui": "default"
 }
