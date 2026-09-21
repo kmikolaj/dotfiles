@@ -1,0 +1,6 @@
+[shell.screen_corners]
+enabled = false
+
+[bar.default]
+concave_edge_corners = false
+radius = 0
