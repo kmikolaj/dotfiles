@@ -7,9 +7,17 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+    "telemetry": {
+        "diagnostics": false,
+        "metrics": false,
+        "anthropic_retention": false
+    },
     "auto_update": false,
-    "ui_font_size": 14,
+    "ui_font_family": "DejaVu Sans",
+    "ui_font_weight": 400,
+    "ui_font_size": 15,
     "buffer_font_family": "JetBrains Mono",
+    "buffer_font_weight": 300,
     "buffer_font_size": 13,
     "tab_size": 4,
     "theme": {
@@ -21,8 +29,12 @@
         "show": false,
         "show_nav_history_buttons": true
     },
+    "title_bar": {
+      "show_user_picture": false,
+      "show_sign_in": false,
+    },
     "terminal": {
-        "font_family": "IosevkaTermNFM",
+        "font_family": "IosevkaTerm Nerd Font Mono",
         "blinking": "off"
     }
 }
