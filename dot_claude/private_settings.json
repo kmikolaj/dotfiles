@@ -103,7 +103,6 @@
       "Bash(python:*)"
     ]
   },
-  "model": "opus",
   "statusLine": {
     "type": "command",
     "command": "python3 ~/.claude/statusline.py"
