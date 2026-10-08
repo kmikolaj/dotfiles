@@ -90,6 +90,7 @@
 	},
 	"workbench.colorTheme": "Solarized Light+",
 	"git.defaultBranchName": "master",
+	"git.mergeEditor": true,
 	"gitlens.showWelcomeOnInstall": false,
 	"gitlens.showWhatsNewAfterUpgrades": false,
 	"gitlens.codeLens.enabled": false,
