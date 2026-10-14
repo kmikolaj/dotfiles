@@ -4,3 +4,6 @@ enabled = false
 [bar.default]
 concave_edge_corners = false
 radius = 0
+
+[shell.privacy]
+mic_filter_regex = "wiremix"
