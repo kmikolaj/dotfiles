@@ -1,0 +1,18 @@
+# bar + i3status-rs
+bar {
+    position top
+    status_command i3status-rs
+    font pango:Envy Code R, Font Awesome 6 Free 10
+}
+
+# clipboard menu
+bindsym Ctrl+Mod1+H exec cliphist list | rofi -m -4 -p clipboard -dmenu | cliphist decode | wl-copy -n
+
+# clipboard
+exec wl-paste -n -t text --watch cliphist store --max-items=80 --unix
+
+# wlsunset (redshift clone)
+exec wlsunset -t 3600 -T 6500 -l 50.06 -L 19.94
+
+# notification daemon
+exec mako

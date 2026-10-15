@@ -1,0 +1,5 @@
+# run noctalia shell
+exec noctalia
+
+# clipboard history
+bindsym Ctrl+Mod1+H exec noctalia msg panel-toggle clipboard
