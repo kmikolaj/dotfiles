@@ -1,9 +1,31 @@
+[bar.default]
+center = [ "workspaces" ]
+concave_edge_corners = false
+end = [ "media", "clipboard", "network", "bluetooth", "volume", "brightness", "battery", "tray", "notifications", "clock" ]
+margin_ends = 0
+radius = 0
+start = [ "session", "settings", "control-center", "active_window" ]
+thickness = 28
+
+[notification]
+history_retention_hours = 24
+
+[osd.kinds]
+media = false
+
+[shell]
+clipboard_auto_paste = "off"
+
 [shell.screen_corners]
 enabled = false
 
-[bar.default]
-concave_edge_corners = false
-radius = 0
-
 [shell.privacy]
 mic_filter_regex = "wiremix"
+
+[theme]
+community_palette = "Solarized Osaka"
+mode = "light"
+source = "community"
+
+[widget.notifications.actions]
+middle = "none"
