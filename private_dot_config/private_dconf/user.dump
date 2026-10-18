@@ -1,0 +1,14 @@
+[desktop/ibus/general]
+engines-order=['xkb:pl::pol']
+preload-engines=['xkb:pl::pol']
+use-system-keyboard-layout=true
+
+[desktop/ibus/panel]
+show-icon-on-systray=false
+
+[desktop/ibus/panel/emoji]
+hotkey=@as []
+
+[org/gnome/desktop/interface]
+color-scheme='prefer-light'
+gtk-enable-primary-paste=true
