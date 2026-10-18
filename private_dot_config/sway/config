@@ -162,7 +162,9 @@ bindsym $mod+Shift+s reload
 bindsym $mod+Shift+r reload
 
 # screenshot
-bindsym Print exec --no-startup-id grim $(xdg-user-dir SCREENSHOTS)/$(date +'%s_shot.png')
+bindsym Print exec --no-startup-id grim -o "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')" $(xdg-user-dir SCREENSHOTS)/$(date +'%s%3N_shot.png')
+# focused window
+bindsym $mod+Print exec --no-startup-id grim -g "$(swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect | "\(.x)\\u002c\(.y) \(.width)x\(.height)"')" $(xdg-user-dir SCREENSHOTS)/$(date +'%s%3N_shot.png')
 
 # mpris play/pause
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
