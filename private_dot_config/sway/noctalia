@@ -3,3 +3,9 @@ exec noctalia
 
 # clipboard history
 bindsym Ctrl+Mod1+H exec noctalia msg panel-toggle clipboard
+
+# launcher
+bindsym Mod1+F2 exec noctalia msg panel-toggle launcher
+
+# session menu
+bindsym $mod+Shift+q exec noctalia msg panel-toggle session

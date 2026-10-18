@@ -5,8 +5,14 @@ bar {
     font pango:Envy Code R, Font Awesome 6 Free 10
 }
 
+# exit sway
+bindsym $mod+Shift+q exec sway-logout.sh $(echo -e "cancel\nlogout\nsuspend\nreboot\npoweroff" | rofi -m -4 -threads 0 -width 32 -l 5 -dmenu -i -p command)
+
 # clipboard menu
 bindsym Ctrl+Mod1+H exec cliphist list | rofi -m -4 -p clipboard -dmenu | cliphist decode | wl-copy -n
+
+# run launcher
+bindsym Mod1+F2 exec rofi -m -4 -show run
 
 # clipboard
 exec wl-paste -n -t text --watch cliphist store --max-items=80 --unix
