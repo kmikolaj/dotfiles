@@ -103,17 +103,24 @@
       "Bash(python:*)"
     ]
   },
+  "model": "opus",
   "statusLine": {
     "type": "command",
-    "command": "python3 ~/.claude/statusline.py"
+    "command": "python3 ~/.claude/statusline.py",
+    "refreshInterval": 60
   },
   "enabledPlugins": {
     "clangd-lsp@claude-plugins-official": true,
     "rust-analyzer-lsp@claude-plugins-official": true
   },
   "syntaxHighlightingDisabled": false,
+  "awaySummaryEnabled": false,
+  "tui": "default",
   "skipDangerousModePermissionPrompt": false,
   "preferredNotifChannel": "terminal_bell",
-  "awaySummaryEnabled": false,
-  "tui": "default"
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "autoCompactWindow": 400000
+    }
+  }
 }
