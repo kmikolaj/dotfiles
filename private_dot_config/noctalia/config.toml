@@ -20,7 +20,7 @@ clipboard_auto_paste = "off"
 enabled = false
 
 [shell.privacy]
-mic_filter_regex = "wiremix"
+mic_filter_regex = "wiremix|winepulse"
 
 [theme]
 community_palette = "Solarized Osaka"
